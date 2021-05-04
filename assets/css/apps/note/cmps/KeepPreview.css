@@ -1,0 +1,13 @@
+.keep-preview {
+    display: flex;
+    flex-direction: column;
+    /* display: inline; */
+    padding: 10px;
+    background-color: rgba(189, 120, 120, 0.678);
+    width: 100%;
+    border-radius: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    align-items: center;
+    margin-bottom: 20px;
+}
