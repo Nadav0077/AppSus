@@ -1,8 +1,8 @@
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch, Link } = ReactRouterDOM
 import { Home } from './pages/Home.jsx'
-import { MailApp } from './pages/MailApp.jsx'
-import { NoteApp } from './pages/NoteApp.jsx'
+import { MailApp } from './Apps/Mail/MailApp.jsx'
+import { NoteApp } from './Apps/Keep/KeepApp.jsx'
 import { AppHeader } from './cmps/AppHeader.jsx'
 
 
