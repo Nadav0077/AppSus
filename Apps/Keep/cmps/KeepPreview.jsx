@@ -17,16 +17,20 @@ export class KeepPreview extends React.Component {
     NoteTodos = (props) => {
         console.log(props)
         return <div className="todos-list">
-                {
-                    props.note.info.todos.map((todo, idx) => {
-                        return <div key={idx} className="todo-container">
-                            <p className="todo">{todo.txt}</p>
-                            {/* {todo.doneAt && <span>{todo.doneAt}</span>} */}
-                        </div>
-                    })
-                }
-            </div>
-        
+            {
+                props.note.info.todos.map((todo, idx) => {
+                    return <div key={idx} className="todo-container" onClick={() => {
+                        todo.doneAt = (todo.doneAt) ? null : Date.now()
+                        keepService.saveNote(props.note)
+                        this.loadNote()
+                    }}>
+                        <p className={`todo ${todo.doneAt && 'todo-done'}`}>{todo.txt}</p>
+                        {todo.doneAt && <span>{Intl.DateTimeFormat('IL-il').format(todo.doneAt)}</span>}
+                    </div>
+                })
+            }
+        </div>
+
     }
 
     NoteImg = (props) => {

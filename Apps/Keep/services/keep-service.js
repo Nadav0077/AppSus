@@ -5,13 +5,24 @@ const KEY = 'notesDB'
 
 export const keepService = {
     getNotes,
-    addNote
+    addNote,
+    saveNote
 }
 
 var gNotes = _createNotes()
 
 function getNotes() {
     return Promise.resolve(gNotes);
+}
+
+function findIdxById(id) {
+    const idx = gNotes.findIndex(note => note.id === id)
+    return idx
+}
+
+function saveNote(note) {
+    gNotes[findIdxById(note.id)] = note
+    storageService.saveToStorage(KEY, gNotes)
 }
 
 function _createNotes() {
@@ -21,6 +32,9 @@ function _createNotes() {
             isPinned: true,
             info: {
                 txt: "Fullstack Me Baby!"
+            },
+            style: {
+                backgroundColor: "#00d"
             }
         },
         {
@@ -44,7 +58,10 @@ function _createNotes() {
                 todos: [
                     { txt: "Do that", doneAt: null },
                     { txt: "Do this", doneAt: 187111111 }
-                ]
+                ],
+                style: {
+                    backgroundColor: "#00d"
+                }
             }
         },
         {
@@ -56,7 +73,10 @@ function _createNotes() {
                 todos: [
                     { txt: "Do that", doneAt: null },
                     { txt: "Do this", doneAt: 187111111 }
-                ]
+                ],
+                style: {
+                    backgroundColor: "#00d"
+                }
             }
         },
         {
@@ -68,7 +88,10 @@ function _createNotes() {
                 todos: [
                     { txt: "Do that", doneAt: null },
                     { txt: "Do this", doneAt: 187111111 }
-                ]
+                ],
+                style: {
+                    backgroundColor: "#00d"
+                }
             }
         },
         {
@@ -82,7 +105,10 @@ function _createNotes() {
                     { txt: "Do this", doneAt: 187111111 },
                     { txt: "Do that", doneAt: null },
                     { txt: "Do that", doneAt: null },
-                ]
+                ],
+                style: {
+                    backgroundColor: "#00d"
+                }
             }
         }, {
             id: utilService.makeId(),
@@ -97,15 +123,16 @@ function _createNotes() {
             }
         }
     ]
+
 }
 
-function addNote(type, info, style = null) {
+function addNote(type, info) {
     gNotes.push({
         id: utilService.makeId(),
         isPinned: false,
         type,
-        info,
-        style
+        info
     })
+    storageService.saveToStorage(KEY, gNotes)
     return Promise.resolve()
 }
