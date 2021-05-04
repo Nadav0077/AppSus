@@ -43,11 +43,12 @@ function _createNotes() {
             type: "NoteImg",
             info: {
                 url: "https://ilion.digital/wp-content/uploads/2019/10/unnamed-1.png",
-                title: "Me playing Mi"
+                title: "Me playing Mi",
+                style: {
+                    backgroundColor: "#00d"
+                }
             },
-            style: {
-                backgroundColor: "#00d"
-            }
+
         },
         {
             id: utilService.makeId(),
@@ -116,11 +117,12 @@ function _createNotes() {
             type: "NoteImg",
             info: {
                 url: "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
-                title: "Me playing Mi"
+                title: "Me playing Mi",
+                style: {
+                    backgroundColor: "#00d"
+                }
             },
-            style: {
-                backgroundColor: "#00d"
-            }
+
         }
     ]
 
