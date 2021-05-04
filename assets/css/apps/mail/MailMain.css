@@ -23,6 +23,7 @@
 .preview-actions {
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
 .mail-extended-preview h1 {
@@ -73,11 +74,18 @@
     overflow: auto;
 }
 
-.mail-full {}
+.mail-side-bar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .mail-side-bar li {
+    text-align: center;
     margin: 30px;
     cursor: pointer;
+    width: 100%;
 }
 
 .mail-full h1 {
