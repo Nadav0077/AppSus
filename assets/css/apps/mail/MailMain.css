@@ -1,0 +1,49 @@
+.mail-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.unread {
+    font-family: quicksandbold;
+}
+
+.mail-reduced-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .3rem;
+    cursor: pointer;
+}
+
+.upper-preview {
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview-actions {
+    display: flex;
+    align-items: center;
+}
+
+.mail-extended-preview h1 {
+    font-size: x-large;
+    margin-left: 20px;
+}
+
+.mail-extended-preview p {
+    text-align: center;
+}
+
+.mail-extended-preview h6 {
+    margin-left: 20px;
+    font-size: larger;
+    margin: 0 0 0 20px;
+}
+
+.mail-extended-preview small {
+    color: rgb(177, 177, 177);
+}
+
+.mail-reduced-preview h3 {
+    margin-left: 20px;
+}
