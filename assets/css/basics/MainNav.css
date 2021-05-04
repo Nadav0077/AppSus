@@ -6,15 +6,18 @@
 }
 
 .app-header {
-    background-color: #C8B6FF;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    background-color: #C8B6FF;
+    align-items: center;
 }
 
 .app-header h1 {
-    justify-self: flex-start;
     cursor: pointer;
+    padding: 5px;
+    margin-left: 5px;
+    font-family: lobster;
+    font-size: 2rem;
 }
 
 .app-header h1 a {
@@ -30,6 +33,7 @@
 .app-header ul {
     display: flex;
     margin-left: 20px;
+    font-size: 2rem;
 }
 
 .app-header li {
@@ -48,6 +52,5 @@
 
 .app-header li .active {
     font-weight: bold;
+    color: rgb(145, 145, 145);
 }
-
-.app-header li .active:hover {}

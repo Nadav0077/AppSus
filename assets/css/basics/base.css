@@ -3,10 +3,12 @@ body {
     margin: 0;
 }
 
-h1 {
-    margin: 0 auto;
-}
-
 footer {
+    display: flex;
     margin: 0;
+    height: 5rem;
+    background-color: #C8B6FF;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }

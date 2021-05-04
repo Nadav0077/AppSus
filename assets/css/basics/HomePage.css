@@ -1,3 +1,25 @@
 body {
     background-color: #FFD6FF;
 }
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.home-container img {
+    height: 350px;
+    width: auto;
+}
+
+.home-container div {
+    text-align: center;
+    cursor: auto;
+}
+
+.home-title {
+    text-align: center;
+    font-size: 5rem;
+}
