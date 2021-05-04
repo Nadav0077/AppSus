@@ -23,6 +23,7 @@ export class AddNote extends React.Component {
 
     onAddTextNote = () => {
         var info = ''
+        // console.log(this.state.inputVal.split(','))
 
         switch (this.state.type) {
             case 'NoteText': info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
@@ -30,8 +31,7 @@ export class AddNote extends React.Component {
             case 'NoteImg': info = { url: this.state.inputVal, title: 'My image', style: { backgroundColor: '#C8B6FF' } }
                 break;
             case 'NoteTodos': {
-                console.log(this.state.inputVal.split(','))
-            //    const todos = this.state.inputVal.split(',').map(todo=>{return{txt:todo, doneAt:null}})
+                const todos = this.state.inputVal.split(',').map(todo => { return { txt: todo, doneAt: null } })
                 info = { label: 'New Todo', todos, style: { backgroundColor: '#C8B6FF' } }
             }
                 break;
