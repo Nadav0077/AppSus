@@ -4,3 +4,50 @@
     list-style-type: none;
     margin: 0;
 }
+
+.app-header {
+    background-color: #C8B6FF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-header h1 {
+    justify-self: flex-start;
+    cursor: pointer;
+}
+
+.app-header h1 a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: whitesmoke;
+}
+
+.app-header h1 a:hover {
+    color: rgb(236, 235, 235);
+}
+
+.app-header ul {
+    display: flex;
+    margin-left: 20px;
+}
+
+.app-header li {
+    margin-left: 10px;
+}
+
+.app-header li a {
+    padding: 20px;
+    border-radius: 10px;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.app-header li a:hover {}
+
+.app-header li .active {
+    font-weight: bold;
+}
+
+.app-header li .active:hover {}
