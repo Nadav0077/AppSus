@@ -21,7 +21,7 @@ export function MailPreview({ mail, loadMails }) {
       <section className="mail-reduced-preview">
         <h3>{mail.user}</h3>
         <h4>{mail.subject}</h4>
-        <small>{mail.sentAt}</small>
+        <small>{ Intl.DateTimeFormat('IL-il').format(mail.sentAt)}</small>
       </section>
       {mail.isOpen && <section className="mail-extended-preview">
         <div className="upper-preview">
@@ -30,7 +30,7 @@ export function MailPreview({ mail, loadMails }) {
             <button onClick={() => {
               onDeleteMail()
             }}>Delete</button>
-            <button>Full</button>
+            <Link to={`/mail/${mail.id}`}>Full</Link>
           </div>
         </div>
         <h6>{mail.user} <small>{mail.user}@gmail.com</small></h6>

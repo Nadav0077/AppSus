@@ -1,4 +1,7 @@
-export class MailApp extends React.Component {
+import { mailService } from './services/mail-service.js'
+
+
+export class MailSideBar extends React.Component {
     state = {
     }
     componentDidMount() {
@@ -6,12 +9,16 @@ export class MailApp extends React.Component {
 
     render() {
         return (
-            <section className="side-bar">
+
+            <section className="mail-side-bar">
+                <h1>{mailService.getPrecentOfRead()}%</h1>
+                <button>Compose +</button>
                 <nav className="mail-nav">
                     <ul className="clean-list">
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>Inbox</li>
+                        <hr/>
+                        <li>Sent Mails</li>
+                        <hr/>
                     </ul>
                 </nav>
             </section>

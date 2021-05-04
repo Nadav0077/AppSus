@@ -1,5 +1,10 @@
+const Router = ReactRouterDOM.HashRouter
+const { Route, Switch } = ReactRouterDOM;
+
+
 import { mailService } from './services/mail-service.js'
 import { MailList } from './cmps/MailList.jsx'
+import { MailSideBar } from './cmps/MailSideBar.jsx'
 
 
 export class MailApp extends React.Component {
@@ -19,9 +24,10 @@ export class MailApp extends React.Component {
         const { mails } = this.state
 
         return (
-            <section>
-                <MailList loadMails ={this.loadMails} mails={mails} />
+            <section className="mail-layout">
                 
+                <MailSideBar />
+                <MailList loadMails ={this.loadMails} mails={mails} />
             </section>
         )
     }

@@ -4,6 +4,7 @@ import { Home } from './pages/Home.jsx'
 import { MailApp } from './Apps/Mail/MailApp.jsx'
 import { KeepApp } from './Apps/Keep/KeepApp.jsx'
 import { AppHeader } from './cmps/AppHeader.jsx'
+import { MailDetails } from './Apps/Mail/pages/MailDetails.jsx'
 
 
 export class App extends React.Component {
@@ -11,9 +12,10 @@ export class App extends React.Component {
         return (
             // <Book></Book>
             <Router>
-                <AppHeader/>
+                <AppHeader />
                 <main>
                     <Switch>
+                        <Route component={MailDetails} path="/mail/:mailId" />
                         <Route component={MailApp} path="/mail" />
                         <Route component={KeepApp} path="/note" />
                         <Route component={Home} path="/" />
@@ -21,7 +23,7 @@ export class App extends React.Component {
                 </main>
                 <footer>coffeerights</footer>
             </Router>
-            )
+        )
     }
 }
 

@@ -8,7 +8,9 @@ export const mailService = {
     addMail,
     deleteMail,
     readMail,
-    toggleMail
+    toggleMail,
+    getMailById,
+    getPrecentOfRead
 }
 var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorage(KEY) : [{
         id: utilService.makeId(),
@@ -99,7 +101,7 @@ function addMail(subject, body) {
 }
 
 function deleteMail(mailId) {
-    const mailIdx = gMails.findIndex(function(mail) {
+    const mailIdx = gMails.findIndex(mail => {
         return mailId === mail.id
     })
     gMails.splice(mailIdx, 1)
@@ -107,7 +109,7 @@ function deleteMail(mailId) {
 }
 
 function getMailById(mailId) {
-    const mail = gMails.find(function(mail) {
+    const mail = gMails.find(mail => {
         return mailId === mail.id
     })
     return Promise.resolve(mail)
@@ -115,9 +117,20 @@ function getMailById(mailId) {
 
 function readMail(mail) {
     mail.isRead = true;
+    storageService.saveToStorage(KEY, gMails)
 }
 
 function toggleMail(mail) {
     if (mail.isOpen) mail.isOpen = false;
     else mail.isOpen = true;
+    storageService.saveToStorage(KEY, gMails)
+}
+
+function getPrecentOfRead() {
+    let counter = 0;
+    gMails.forEach(mail => {
+        if (mail.isRead) counter++;
+    });
+    const precent = (counter / gMails.length) * 100
+    return Math.round(precent);
 }
