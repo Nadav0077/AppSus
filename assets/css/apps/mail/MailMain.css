@@ -48,6 +48,10 @@
     margin-left: 20px;
 }
 
+.mail-reduced-preview small {
+    margin-right: 20px;
+}
+
 .mail-layout {
     display: flex;
 }
@@ -64,7 +68,7 @@
 }
 
 .mail-list {
-    flex-basis: 70%;
+    flex-basis: 80%;
     height: 600px;
     overflow: auto;
 }
@@ -109,4 +113,27 @@
     justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.mail-status {
+    width: 100%;
+    flex-direction: column;
+}
+
+.mail-status .bar-container {
+    display: flex;
+    background-color: #C8B6FF;
+    height: 30px;
+    width: 100%;
+    border-radius: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar-container .bar-proccess {
+    background-color: #906bff;
+    height: 80%;
+    border-radius: 35px;
+    width: 1%;
+    transition: .3s;
 }

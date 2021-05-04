@@ -1,4 +1,5 @@
 import { mailService } from './services/mail-service.js'
+import { MailStatus } from './MailStatus.jsx'
 
 
 export class MailSideBar extends React.Component {
@@ -11,7 +12,7 @@ export class MailSideBar extends React.Component {
         return (
 
             <section className="mail-side-bar">
-                <h1>{mailService.getPrecentOfRead()}%</h1>
+                <MailStatus></MailStatus>
                 <button>Compose +</button>
                 <nav className="mail-nav">
                     <ul className="clean-list">
