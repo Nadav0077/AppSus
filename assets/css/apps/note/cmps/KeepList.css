@@ -1,0 +1,15 @@
+.notes-container div {
+    column-count: 4;
+    column-width: 50%;
+    /* column-gap: 40px; */
+    /* column-fill: inherit;*/
+    /* background-color: #fff; */
+    /* min-height: 800px; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    gap: 30px;
+}
+
+.notes-container {
+    padding: 50px;
+}

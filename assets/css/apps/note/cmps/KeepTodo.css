@@ -1,0 +1,8 @@
+.todos-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-container {
+    border-bottom: black solid 1px;
+}
