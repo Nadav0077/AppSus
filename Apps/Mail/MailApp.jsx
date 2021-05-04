@@ -1,3 +1,6 @@
+import { mailService } from '../'
+
+
 export class MailApp extends React.Component {
     render() {
         return (
@@ -7,3 +10,4 @@ export class MailApp extends React.Component {
             )
     }
 }
+
