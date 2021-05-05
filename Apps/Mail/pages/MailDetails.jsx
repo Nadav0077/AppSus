@@ -38,15 +38,14 @@ export class MailDetails extends React.Component {
                     </div>
                 </div>
                 <div className="actions">
-                     <Link to="/mail" >Back</Link>
+                     <Link to="/mail" ><img src="../../../assets/_PNG 64/back-button.png"/></Link>
                      <Link to="/mail" onClick={() =>{
                          this.onDeleteMail()
                      }}
-                      >Delete</Link>
+                      ><img src="../../../assets/_PNG 64/basic_trashcan.png"/></Link>
                 </div>
 
             </section>
         )
     }
 }
-

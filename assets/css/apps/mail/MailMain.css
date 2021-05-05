@@ -31,6 +31,11 @@
     margin-left: 20px;
 }
 
+.mail-extended-preview img {
+    height: 20px;
+    width: auto;
+}
+
 .mail-extended-preview p {
     text-align: center;
 }
@@ -74,6 +79,11 @@
     overflow: auto;
 }
 
+.mail-list h1 {
+    display: flex;
+    justify-content: center;
+}
+
 .mail-side-bar ul {
     display: flex;
     flex-direction: column;
@@ -95,6 +105,10 @@
 
 .mail-full small {
     color: rgb(177, 177, 177);
+}
+
+.mail-full img {
+    height: 40px;
 }
 
 .mail-full .upper {
@@ -170,7 +184,7 @@
 
 .mail-form input {
     border: 2px solid black;
-    height: 30px;
+    height: 40px;
 }
 
 .mail-form textarea {
@@ -179,4 +193,21 @@
     border: 2px solid black;
 }
 
-.mail-form ::placeholder {}
+.mail-form ::placeholder {
+    font-size: larger;
+}
+
+.add-mail .actions {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-mail img {
+    height: 40px;
+}
+
+.fullscreen-icon {
+    margin-left: 5px;
+    margin-top: 5px
+}

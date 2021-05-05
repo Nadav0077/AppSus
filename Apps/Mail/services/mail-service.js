@@ -19,7 +19,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         body: 'Pick up!',
         isRead: false,
         sentAt: 1551133930594,
-        isOpen: false
+        isOpen: false,
+        isSent: false
     },
     {
         id: utilService.makeId(),
@@ -28,7 +29,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         body: 'Do all exercises from page 100 to 103! goodluck :)',
         isRead: true,
         sentAt: 1551133930594,
-        isOpen: false
+        isOpen: false,
+        isSent: false
     },
     {
         id: utilService.makeId(),
@@ -37,7 +39,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         body: 'join coding academy now! and do magic!',
         isRead: true,
         sentAt: 1551133930594,
-        isOpen: false
+        isOpen: false,
+        isSent: false
     },
     {
         id: utilService.makeId(),
@@ -46,7 +49,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         body: 'Pick up!',
         isRead: false,
         sentAt: 1551133930594,
-        isOpen: false
+        isOpen: false,
+        isSent: false
     },
     {
         id: utilService.makeId(),
@@ -55,7 +59,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         body: 'Pick up!',
         isRead: false,
         sentAt: 1551133930594,
-        isOpen: false
+        isOpen: false,
+        isSent: false
     },
     {
         id: utilService.makeId(),
@@ -64,7 +69,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         body: 'Pick up!',
         isRead: false,
         sentAt: 1551133930594,
-        isOpen: false
+        isOpen: false,
+        isSent: false
     },
     {
         id: utilService.makeId(),
@@ -73,7 +79,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         body: 'Pick up!',
         isRead: false,
         sentAt: 1551133930594,
-        isOpen: false
+        isOpen: false,
+        isSent: false
     },
 ];
 
@@ -101,7 +108,8 @@ function _createMail(subject, body) {
         body: body,
         isRead: false,
         sentAt: Date.now(),
-        isOpen: false
+        isOpen: false,
+        isSent: true
     }
     return newMail;
 }

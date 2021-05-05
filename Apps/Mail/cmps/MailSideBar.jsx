@@ -19,9 +19,7 @@ export class MailSideBar extends React.Component {
                 <nav className="mail-nav">
                     <ul className="clean-list">
                         <li>Inbox</li>
-                        <hr/>
                         <li>Sent Mails</li>
-                        <hr/>
                     </ul>
                 </nav>
             </section>

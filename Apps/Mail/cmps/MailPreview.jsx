@@ -27,10 +27,10 @@ export function MailPreview({ mail, loadMails }) {
         <div className="upper-preview">
           <h1>{mail.subject}</h1>
           <div className="preview-actions">
-            <button onClick={() => {
+            <img className="icon" src='../../../assets/_SVG/basic_trashcan.svg' onClick={() => {
               onDeleteMail()
-            }}>Delete</button>
-            <Link to={`/mail/${mail.id}`}>Full</Link>
+            }}></img>
+            <Link to={`/mail/${mail.id}`}><img className="fullscreen-icon" src="../../../assets/_PNG 64/fullscreen.png"/></Link>
           </div>
         </div>
         <h6>{mail.user} <small>{mail.user}@gmail.com</small></h6>
