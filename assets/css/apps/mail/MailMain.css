@@ -20,7 +20,7 @@
 }
 
 .stared {
-    color: rgb(196, 196, 4);
+    color: rgb(198, 198, 7);
 }
 
 .upper-preview {
@@ -36,7 +36,7 @@
 
 .mail-extended-preview h1 {
     font-size: x-large;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .mail-extended-preview img {
@@ -51,7 +51,7 @@
 .mail-extended-preview h6 {
     margin-left: 20px;
     font-size: larger;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 40px;
 }
 
 .mail-extended-preview small {
@@ -130,7 +130,7 @@
 .mail-full .content {
     display: flex;
     justify-content: center;
-    height: 450px;
+    height: 400px;
     align-items: center;
 }
 

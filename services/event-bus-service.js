@@ -17,6 +17,12 @@ function emit(eventName, data) {
 
 export const eventBusService = { on, emit };
 
+export function showUserMsg(txt, type = '') {
+    eventBusService.emit('show-user-msg', { txt, type })
+    console.log(txt, type);
+
+}
+
 // export function showUserMsg(txt, type = '') {
 //     eventBusService.emit('show-user-msg', { txt, type })
 

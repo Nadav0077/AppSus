@@ -6,6 +6,7 @@ import { KeepApp } from './Apps/Keep/KeepApp.jsx'
 import { AppHeader } from './cmps/AppHeader.jsx'
 import { MailDetails } from './Apps/Mail/pages/MailDetails.jsx'
 import { MailCompose } from './Apps/Mail/pages/MailCompose.jsx'
+import { UserMsg } from './Apps/Mail/cmps/UserMsg.jsx'
 
 
 export class App extends React.Component {
@@ -15,6 +16,7 @@ export class App extends React.Component {
             <Router>
                 <AppHeader />
                 <main>
+                    <UserMsg />
                     <Switch>
                         <Route component={MailCompose} path="/mail/compose" />
                         <Route component={MailDetails} path="/mail/:mailId" />

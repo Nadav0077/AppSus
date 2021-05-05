@@ -1,6 +1,6 @@
 const { Link } = ReactRouterDOM
 import { mailService } from '../services/mail-service.js'
-
+import { showUserMsg } from '../../../services/event-bus-service.js'
 export class MailCompose extends React.Component {
     state = {
         mail: {
@@ -19,6 +19,7 @@ export class MailCompose extends React.Component {
     onSendMail(){
         const {subject,body} = this.state.mail
         mailService.addMail(subject,body);
+        showUserMsg('Your email sent successfully', 'success')
     }
 
     render() {
@@ -33,7 +34,7 @@ export class MailCompose extends React.Component {
                     <Link to="/mail" ><img src="../../../assets/_PNG 64/back-button.png"/></Link>
                     <Link to="/mail" onClick={() =>{
                         this.onSendMail()
-                    }}><img src="../../../assets/_PNG 64/basic_paperplane.png"></img> </Link>
+                    }}><img src="../../../assets/_PNG 64/basic_paperplane.png"></img></Link>
                 </div>
 
             </div>

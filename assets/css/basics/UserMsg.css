@@ -1,0 +1,21 @@
+.error {
+    border: 3px solid #ff9292;
+    color: #ff9494;
+}
+
+.success {
+    border: 3px solid rgb(140, 207, 140);
+    color: rgb(140, 207, 140);
+}
+
+.user-msg {
+    position: fixed;
+    padding: 10px;
+    background-color: #F5F7FA;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
