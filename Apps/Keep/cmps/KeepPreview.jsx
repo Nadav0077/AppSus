@@ -1,4 +1,5 @@
 import { keepService } from '../services/keep-service.js'
+import { showUserMsg } from '../../../services/event-bus-service.js'
 
 export class KeepPreview extends React.Component {
 
@@ -121,6 +122,7 @@ export class KeepPreview extends React.Component {
     }
 
     handleTextChange = ({ target }) => {
+        showUserMsg('Note Updated!','success')
         this.setState({ inputVal: target.value })
     }
 

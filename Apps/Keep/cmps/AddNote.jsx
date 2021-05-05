@@ -1,6 +1,7 @@
 import { keepService } from '../services/keep-service.js'
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch, Link, NavLink } = ReactRouterDOM
+import { showUserMsg } from '../../../services/event-bus-service.js'
 
 export class AddNote extends React.Component {
     
@@ -51,6 +52,7 @@ export class AddNote extends React.Component {
         }
         keepService.addNote(this.state.type, info).then(() => {
             this.props.onRenderPage()
+            showUserMsg('Added Note!','success')
         })
     }
 

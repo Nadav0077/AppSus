@@ -1,5 +1,6 @@
 import { KeepPreview } from './KeepPreview.jsx'
 import { keepService } from '../services/keep-service.js'
+import { showUserMsg } from '../../../services/event-bus-service.js'
 
 export class KeepList extends React.Component {
     state = {
@@ -24,6 +25,7 @@ export class KeepList extends React.Component {
     onDeleteNote=(note)=>{
         keepService.delNote(note)
         this.loadNotes()
+        showUserMsg('Note Deleted!','error')
     }
 
     render() {
