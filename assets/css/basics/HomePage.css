@@ -7,11 +7,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 100px;
+    flex-wrap: wrap;
 }
 
 .home-container img {
-    height: 350px;
-    width: auto;
+    height: auto;
+    max-width: 400px;
 }
 
 .home-container div {

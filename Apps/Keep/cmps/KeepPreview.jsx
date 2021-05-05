@@ -4,6 +4,8 @@ export class KeepPreview extends React.Component {
 
     state = {
         note: null,
+        isEdit: false,
+        inputVal: ''
 
     }
 
@@ -16,7 +18,6 @@ export class KeepPreview extends React.Component {
     }
 
     NoteTodos = (props) => {
-        console.log(props)
         return <div className="todos-list">
             {
                 props.note.info.todos.map((todo, idx) => {
@@ -33,6 +34,7 @@ export class KeepPreview extends React.Component {
         </div>
 
     }
+
 
     NoteImg = (props) => {
         return <img className="img-note" src={props.note.info.url} alt={props.note.info.title} />
@@ -61,33 +63,81 @@ export class KeepPreview extends React.Component {
         }
     }
 
+    NotePanel = () => {
+        if (!this.state.isEdit)
+            return <div className="note-panel">
+                <input name="backgroundColor" type="color" onChange={this.handleColorChange} />
+                <button className="icon edit-btn" onClick={() => { this.setState({ isEdit: true }) }}></button>
+                <button className="icon pin-btn" onClick={()=>{this.props.changePin(this.state.note)}}></button>
+            </div>
 
 
-    handleChange = ({ target }) => {
+        console.log(this.state.note.type)
+        var placeHolderText = ''
+        const { info } = this.state.note
+        switch (this.state.note.type) {
+            case 'NoteText': placeHolderText = info.txt
+                break;
+            case 'NoteImg':
+            case 'NoteVideo': placeHolderText = info.url
+                break;
+            case 'NoteTodos': placeHolderText = info.todos.map(todo => { return todo.txt }).join(',')
+                break;
+
+        }
+
+        return <form>
+            <form onSubmit={(ev) => {
+                ev.preventDefault();
+                this.onEditNote()
+            }}>
+                <button onClick={() => { this.setState({ isEdit: false }) }} className="icon">{'<'}</button>
+                <input placeholder={placeHolderText} name="editNote"
+                    type="text" onInput={this.handleTextChange} /><button className="icon">+</button></form>
+        </form>
+    }
+
+    onEditNote = () => {
+        var note = this.state.note
+        const { inputVal } = this.state
+        switch (this.state.note.type) {
+            case 'NoteText': note.info.txt = inputVal
+                break;
+            case 'NoteImg':
+            case 'NoteVideo': note.info.url = inputVal
+                break;
+            case 'NoteTodos': {
+                note.info.todos = this.state.inputVal.split(',').map(todo => { return { txt: todo, doneAt: null } })
+
+            }
+                break;
+
+        }
+        console.log(inputVal)
+        keepService.saveNote(note)
+        this.setState({ note, isEdit: false })
+
+    }
+
+    handleTextChange = ({ target }) => {
+        this.setState({ inputVal: target.value })
+    }
+
+
+    handleColorChange = ({ target }) => {
         const field = target.name
         const value = target.value
         var { note } = this.state
-        switch(field){
-            case 'backgroundColor': note.info.style.backgroundColor=value;
-            break;
-        }
+        note.info.style.backgroundColor = value;
         keepService.saveNote(note)
-        this.setState({
-            // review: {
-            //     ...prevState.review,
-            //     [field]: value
-            // }
-            note
-        })
+        this.setState({ note })
     }
     render() {
-
-        console.log(this.props.note)
+        if (!this.state.note) return 'loading...'
         return <article className="keep-preview" style={{ backgroundColor: this.props.note.info.style.backgroundColor }}>
             <this.DynamicCmp note={this.props.note} />
-            <div className="note-pannel">
-                <input name="backgroundColor" type="color" onChange={this.handleChange} />
-            </div>
+            <this.NotePanel />
+
         </article>
     }
 }

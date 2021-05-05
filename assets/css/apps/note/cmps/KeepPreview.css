@@ -12,13 +12,27 @@
     margin-bottom: 10px;
 }
 
-.note-pannel {
+.note-panel {
     padding: 20px;
+    display: flex;
 }
 
-.note-pannel input[type=color] {
+.note-panel input[type=color] {
     height: 40px;
     width: 40px;
     border-width: 0;
     border-radius: 10px;
+}
+
+.keep-preview form {
+    display: flex;
+    padding: 5px;
+}
+
+.edit-btn {
+    background-image: url(../../../../_PNG\ 64/basic_gear.png);
+}
+
+.pin-btn {
+    background-image: url(../../../../_PNG\ 64/basic_pin2.png);
 }

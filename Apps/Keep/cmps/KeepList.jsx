@@ -3,7 +3,7 @@ import { keepService } from '../services/keep-service.js'
 
 export class KeepList extends React.Component {
     state = {
-        notes:[]
+        notes: []
     }
     componentDidMount() {
         this.loadNotes()
@@ -15,25 +15,30 @@ export class KeepList extends React.Component {
         })
     }
 
+    changePin = (note) => {
+        note.isPinned = !note.isPinned
+        keepService.saveNote(note)
+        this.loadNotes()
+    }
+
     render() {
         const { notes } = this.state
         if (!notes) return 'Loading'
-        console.log(notes)
         return <div className="notes-container">
-                <h1>Pinned Notes</h1>
+            <h1>Pinned Notes</h1>
             <div className="pinned-container">
                 {
                     notes.map(note => {
-                        if (note.isPinned)  return <KeepPreview key={note.id} note={note} />
+                        if (note.isPinned) return <KeepPreview changePin={this.changePin} key={note.id} note={note} />
                         return ''
                     })
                 }
             </div>
-                <h1>Unpinned Notes</h1>
+            <h1>Unpinned Notes</h1>
             <div className="regular-container">
                 {
                     notes.map(note => {
-                        if (!note.isPinned)  return <KeepPreview key={note.id} isPinnedList={false} note={note} />
+                        if (!note.isPinned) return <KeepPreview changePin={this.changePin} key={note.id} isPinnedList={false} note={note} />
                         return ''
                     })
                 }
