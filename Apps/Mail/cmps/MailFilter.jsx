@@ -20,11 +20,7 @@ export class MailFilter extends React.Component {
     }
 
     render() {
-<<<<<<< HEAD
         const { txt } = this.state.filterBy
-=======
-        const { txt, isRead } = this.state.filterBy
->>>>>>> 082285e8659164cfc699b129ce4a44cdda668ca5
         return (
             <form className="mail-filter" onSubmit={this.onFilter}>
                 <label htmlFor="byText">By Text</label>
