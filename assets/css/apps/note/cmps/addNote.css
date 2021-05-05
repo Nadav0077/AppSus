@@ -2,10 +2,45 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin: 30px;
+    gap: 10px;
+}
+
+.add-note-container nav {
+    display: flex;
+    gap: 20px;
+}
+
+.add-note-container form {
+    display: flex;
 }
 
 .add-note-container input {
-    width: 300px;
+    width: 350px;
     padding: 10px;
     border-color: rgba(255, 248, 220, 0.37);
+    border-radius: 5px;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 2.5rem;
+    height: 45px;
+    width: 45px;
+    border: transparent;
+    background-color: transparent;
+    background-position: center;
+    background-size: contain;
+}
+
+.video-btn {
+    background-image: url(../../../../_SVG/basic_video.svg);
+}
+
+.img-btn {
+    background-image: url(../../../../_SVG/basic_picture_multiple.svg);
+}
+
+.todo-btn {
+    background-image: url(../../../../_SVG/basic_todo_txt.svg);
 }

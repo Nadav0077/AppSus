@@ -11,3 +11,12 @@
     align-items: center;
     margin-bottom: 10px;
 }
+
+.note-pannel {
+    padding: 20px;
+}
+
+.note-pannel input[type=color] {
+    height: 40px;
+    width: 40px;
+}

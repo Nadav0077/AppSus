@@ -29,10 +29,11 @@ export class AddNote extends React.Component {
         return <form onSubmit={(ev) => {
             ev.preventDefault();
             this.onAddTextNote()
-        }}> <input placeholder={placeHolderText} type="text" onInput={this.handleChange} /><button>+</button></form>
+        }}> <input placeholder={placeHolderText} type="text" onInput={this.handleChange} /><button className="icon">+</button></form>
     }
 
     onAddTextNote = () => {
+        if(!this.state.inputVal||!this.state.inputVal.length===0) return
         debugger
         var info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
         // console.log(this.state.inputVal.split(','))
@@ -66,10 +67,10 @@ export class AddNote extends React.Component {
         return (
             <div className="add-note-container">
                 <nav>
-                    <span onClick={() => { this.setState({ type: 'NoteText' }) }}>Add Text</span>
-                    <span onClick={() => { this.setState({ type: 'NoteImg' }) }}>Add Img</span>
-                    <span onClick={() => { this.setState({ type: 'NoteTodos' }) }}>Add Todo</span>
-                    <span onClick={() => { this.setState({ type: 'NoteVideo' }) }}>Add Video</span>
+                    <button className="icon" onClick={() => { this.setState({ type: 'NoteText' }) }}>T</button>
+                    <button className="icon img-btn" onClick={() => { this.setState({ type: 'NoteImg' }) }}></button>
+                    <button className="icon todo-btn" onClick={() => { this.setState({ type: 'NoteTodos' }) }}></button>
+                    <button className="icon video-btn" onClick={() => { this.setState({ type: 'NoteVideo' }) }}></button>
                 </nav>
 
                 <this.DynamicInput />
