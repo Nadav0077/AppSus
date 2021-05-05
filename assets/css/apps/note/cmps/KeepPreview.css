@@ -24,6 +24,13 @@
     border-radius: 10px;
 }
 
+.keep-preview form input {
+    width: 90%;
+    padding: 10px;
+    border-color: rgba(255, 248, 220, 0.37);
+    border-radius: 5px;
+}
+
 .keep-preview form {
     display: flex;
     padding: 5px;
