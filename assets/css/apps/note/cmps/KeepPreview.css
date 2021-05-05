@@ -36,3 +36,7 @@
 .pin-btn {
     background-image: url(../../../../_PNG\ 64/basic_pin2.png);
 }
+
+.delete-note-btn {
+    background-image: url(../../../../_PNG\ 64/basic_trashcan_remove.png);
+}

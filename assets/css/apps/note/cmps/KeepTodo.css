@@ -23,4 +23,5 @@
 
 .todo-done {
     text-decoration-line: line-through;
+    color: rgb(87, 86, 86);
 }

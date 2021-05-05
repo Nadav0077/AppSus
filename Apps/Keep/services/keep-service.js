@@ -6,13 +6,19 @@ const KEY = 'notesDB'
 export const keepService = {
     getNotes,
     addNote,
-    saveNote
+    saveNote,
+    delNote
 }
 
 var gNotes = _createNotes()
 
 function getNotes() {
     return Promise.resolve(gNotes);
+}
+
+function delNote(note) {
+    gNotes.splice(findIdxById(note.id), 1)
+    storageService.saveToStorage(KEY, gNotes)
 }
 
 function findIdxById(id) {

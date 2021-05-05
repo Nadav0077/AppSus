@@ -21,6 +21,11 @@ export class KeepList extends React.Component {
         this.loadNotes()
     }
 
+    onDeleteNote=(note)=>{
+        keepService.delNote(note)
+        this.loadNotes()
+    }
+
     render() {
         const { notes } = this.state
         if (!notes) return 'Loading'
@@ -29,7 +34,7 @@ export class KeepList extends React.Component {
             <div className="pinned-container">
                 {
                     notes.map(note => {
-                        if (note.isPinned) return <KeepPreview changePin={this.changePin} key={note.id} note={note} />
+                        if (note.isPinned) return <KeepPreview onDeleteNote={this.onDeleteNote} changePin={this.changePin} key={note.id} note={note} />
                         return ''
                     })
                 }
@@ -38,7 +43,7 @@ export class KeepList extends React.Component {
             <div className="regular-container">
                 {
                     notes.map(note => {
-                        if (!note.isPinned) return <KeepPreview changePin={this.changePin} key={note.id} isPinnedList={false} note={note} />
+                        if (!note.isPinned) return <KeepPreview onDeleteNote={this.onDeleteNote} changePin={this.changePin} key={note.id} isPinnedList={false} note={note} />
                         return ''
                     })
                 }

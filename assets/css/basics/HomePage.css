@@ -24,3 +24,18 @@ body {
     text-align: center;
     font-size: 5rem;
 }
+
+@media screen and (max-width: 1300px) {}
+
+@media screen and (max-width: 500px) {
+    .home-container div {
+        font-size: 0.7rem;
+    }
+    .home-title {
+        font-size: 2rem;
+    }
+    .home-container img {
+        max-height: 100px;
+        width: auto;
+    }
+}
