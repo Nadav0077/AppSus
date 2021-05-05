@@ -9,24 +9,29 @@ import { MailSideBar } from './cmps/MailSideBar.jsx'
 
 export class MailApp extends React.Component {
     state = {
-        mails: []
+        mails: [],
+        filterBy: null
     }
     componentDidMount() {
         this.loadMails()
     }
 
     loadMails = () => {
-        mailService.query().then((mails) => {
+        
+        mailService.query(this.state.filterBy).then((mails) => {
+            console.log(mails)
             this.setState({ mails })
+            
         })
+    }
+    onSetFilter = (filterBy) => {
+        this.setState({ filterBy }, this.loadMails)
     }
     render() {
         const { mails } = this.state
-
         return (
             <section className="mail-layout">
-                
-                <MailSideBar />
+                <MailSideBar onSetFilter={this.onSetFilter}/>
                 <MailList loadMails ={this.loadMails} mails={mails} />
             </section>
         )

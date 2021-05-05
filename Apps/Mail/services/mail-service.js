@@ -77,7 +77,19 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
 ];
 
-function query() {
+function query(filterBy = {}) {
+    if (filterBy) {
+        var { isRead, txt } = filterBy
+        const filteredMails = gMails.filter(mail => {
+            if (isRead === 'all') {
+                return (mail.subject.includes(txt) || mail.body.includes(txt) || mail.user.includes(txt))
+            } else if (isRead === 'readed') {
+                return (mail.subject.includes(txt) || mail.body.includes(txt) || mail.user.includes(txt)) && mail.isRead
+            }
+            return (mail.subject.includes(txt) || mail.body.includes(txt) || mail.user.includes(txt)) && !mail.isRead
+        })
+        return Promise.resolve(filteredMails);
+    }
     return Promise.resolve(gMails);
 }
 

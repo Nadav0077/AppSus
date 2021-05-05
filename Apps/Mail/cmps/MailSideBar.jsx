@@ -1,5 +1,7 @@
 import { mailService } from './services/mail-service.js'
 import { MailStatus } from './MailStatus.jsx'
+import { MailFilter } from './MailFilter.jsx'
+const { Link } = ReactRouterDOM
 
 
 export class MailSideBar extends React.Component {
@@ -10,10 +12,10 @@ export class MailSideBar extends React.Component {
 
     render() {
         return (
-
             <section className="mail-side-bar">
-                <MailStatus></MailStatus>
-                <button>Compose +</button>
+                <Link to="/mail/compose">Compose +</Link>
+                <MailFilter onSetFilter={this.props.onSetFilter}/>
+                <MailStatus />
                 <nav className="mail-nav">
                     <ul className="clean-list">
                         <li>Inbox</li>

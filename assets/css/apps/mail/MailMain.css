@@ -126,6 +126,11 @@
 .mail-status {
     width: 100%;
     flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.mail-status h1 {
+    margin: 0 auto;
 }
 
 .mail-status .bar-container {
@@ -145,3 +150,33 @@
     width: 1%;
     transition: .3s;
 }
+
+.mail-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-mail h1 {
+    text-align: center;
+}
+
+.mail-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.mail-form input {
+    border: 2px solid black;
+    height: 30px;
+}
+
+.mail-form textarea {
+    resize: none;
+    margin-top: 1px;
+    border: 2px solid black;
+}
+
+.mail-form ::placeholder {}
