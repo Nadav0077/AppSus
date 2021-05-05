@@ -3,7 +3,8 @@ import { keepService } from '../services/keep-service.js'
 export class KeepPreview extends React.Component {
 
     state = {
-        note: null
+        note: null,
+
     }
 
     componentDidMount() {
@@ -41,17 +42,20 @@ export class KeepPreview extends React.Component {
         return <p>{props.note.info.txt} </p>
     }
 
+    NoteVideo = (props) => {
+        return <iframe height="400px" width="100%" frameBorder="0" allowFullScreen src={props.note.info.url}></iframe>
+    }
+
     DynamicCmp = (props) => {
         switch (props.note.type) {
             case 'NoteTodos':
                 return <this.NoteTodos {...props} />
-            // <this.NoteTodos {...props} />
             case 'NoteImg':
                 return <this.NoteImg {...props} />
-            // <this.NoteImg {...props} />
             case 'NoteText':
                 return <this.NoteText {...props} />
-            // <this.NoteText {...props} />
+            case 'NoteVideo':
+                return <this.NoteVideo {...props} />
             default:
                 return <h1>nana</h1>
         }
@@ -61,19 +65,29 @@ export class KeepPreview extends React.Component {
 
     handleChange = ({ target }) => {
         const field = target.name
-        const value = target.type === 'number' ? +target.value : target.value
-        this.setState(prevState => ({
-            review: {
-                ...prevState.review,
-                [field]: value
-            }
-        }))
+        const value = target.value
+        var { note } = this.state
+        switch(field){
+            case 'backgroundColor': note.info.style.backgroundColor=value;
+            break;
+        }
+        keepService.saveNote(note)
+        this.setState({
+            // review: {
+            //     ...prevState.review,
+            //     [field]: value
+            // }
+            note
+        })
     }
     render() {
 
         console.log(this.props.note)
-        return <article className="keep-preview">
+        return <article className="keep-preview" style={{ backgroundColor: this.props.note.info.style.backgroundColor }}>
             <this.DynamicCmp note={this.props.note} />
+            <div className="note-pannel">
+                <input name="backgroundColor" type="color" onChange={this.handleChange} />
+            </div>
         </article>
     }
 }
