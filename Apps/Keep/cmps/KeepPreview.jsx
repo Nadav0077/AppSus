@@ -46,7 +46,8 @@ export class KeepPreview extends React.Component {
     }
 
     NoteVideo = (props) => {
-        return <iframe height="400px" width="100%" frameBorder="0" allowFullScreen src={props.note.info.url}></iframe>
+        
+        return <iframe height="400px" width="100%" frameBorder="0" allowFullScreen src={keepService.createEmbededLink(props.note.info.url)}></iframe>
     }
 
     DynamicCmp = (props) => {

@@ -7,14 +7,33 @@ export const keepService = {
     getNotes,
     addNote,
     saveNote,
-    delNote
+    delNote,
+    createEmbededLink
+
 }
+
+
 
 var gNotes = _createNotes()
 
 function getNotes() {
     return Promise.resolve(gNotes);
 }
+
+function createEmbededLink(link) {
+    link = link.replace('watch?v=', 'embed/');
+    console.log('link after replace', link)
+    if (link.split('').findIndex(char => char === '&') === -1) {
+        console.log(link);
+        return link;
+    } else {
+        link = link.slice(0, link.split('').findIndex(char => char === '&'));
+        console.log(link);
+        return link;
+    }
+}
+
+
 
 function delNote(note) {
     gNotes.splice(findIdxById(note.id), 1)
