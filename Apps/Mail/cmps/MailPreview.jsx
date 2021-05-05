@@ -1,5 +1,6 @@
 const { Link } = ReactRouterDOM
 import { mailService } from './services/mail-service.js'
+import { showUserMsg } from '../../../services/event-bus-service.js'
 
 
 export function MailPreview({ mail, loadMails }) {
@@ -12,6 +13,7 @@ export function MailPreview({ mail, loadMails }) {
   function onDeleteMail() {
     mailService.deleteMail(mail.id);
     loadMails()
+    showUserMsg('Mail deleted successfully', 'error')
   }
 
   function subjectPreview(){
@@ -22,7 +24,6 @@ export function MailPreview({ mail, loadMails }) {
   }
 
   function onAddStar(){
-
     mailService.toggleStar(mail)
   }
 
