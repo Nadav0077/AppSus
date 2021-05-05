@@ -41,17 +41,20 @@ export class KeepPreview extends React.Component {
         return <p>{props.note.info.txt} </p>
     }
 
+    NoteVideo = (props) => {
+        return <iframe height="auto" width="100%" frameBorder="0" allowFullScreen src={props.note.info.url}></iframe>
+    }
+
     DynamicCmp = (props) => {
         switch (props.note.type) {
             case 'NoteTodos':
                 return <this.NoteTodos {...props} />
-            // <this.NoteTodos {...props} />
             case 'NoteImg':
                 return <this.NoteImg {...props} />
-            // <this.NoteImg {...props} />
             case 'NoteText':
                 return <this.NoteText {...props} />
-            // <this.NoteText {...props} />
+            case 'NoteVideo':
+                return <this.NoteVideo {...props} />
             default:
                 return <h1>nana</h1>
         }
@@ -72,7 +75,7 @@ export class KeepPreview extends React.Component {
     render() {
 
         console.log(this.props.note)
-        return <article className="keep-preview">
+        return <article className="keep-preview" style={{ backgroundColor: this.props.note.info.style.backgroundColor }}>
             <this.DynamicCmp note={this.props.note} />
         </article>
     }

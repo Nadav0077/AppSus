@@ -31,11 +31,12 @@ function _createNotes() {
             type: "NoteText",
             isPinned: true,
             info: {
-                txt: "Fullstack Me Baby!"
-            },
-            style: {
-                backgroundColor: "#00d"
+                txt: "Fullstack Me Baby!",
+                style: {
+                    backgroundColor: "#B247FF"
+                }
             }
+
         },
         {
             id: utilService.makeId(),
@@ -45,7 +46,7 @@ function _createNotes() {
                 url: "https://ilion.digital/wp-content/uploads/2019/10/unnamed-1.png",
                 title: "Me playing Mi",
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#B247FF"
                 }
             },
 
@@ -61,7 +62,7 @@ function _createNotes() {
                     { txt: "Do this", doneAt: 187111111 }
                 ],
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#B247FF"
                 }
             }
         },
@@ -76,7 +77,7 @@ function _createNotes() {
                     { txt: "Do this", doneAt: 187111111 }
                 ],
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#FF99FF"
                 }
             }
         },
@@ -91,7 +92,7 @@ function _createNotes() {
                     { txt: "Do this", doneAt: 187111111 }
                 ],
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#4782ff"
                 }
             }
         },
@@ -108,7 +109,7 @@ function _createNotes() {
                     { txt: "Do that", doneAt: null },
                 ],
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#475dff"
                 }
             }
         }, {
@@ -119,7 +120,7 @@ function _createNotes() {
                 url: "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
                 title: "Me playing Mi",
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#8F00F5"
                 }
             },
 

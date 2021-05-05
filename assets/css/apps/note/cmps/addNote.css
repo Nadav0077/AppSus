@@ -1,0 +1,11 @@
+.add-note-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-note-container input {
+    width: 300px;
+    padding: 10px;
+    border-color: rgba(255, 248, 220, 0.37);
+}
