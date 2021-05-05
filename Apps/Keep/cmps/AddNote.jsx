@@ -9,7 +9,6 @@ export class AddNote extends React.Component {
         type: null
     }
     componentDidMount() {
-        console.log(this.props)
         this.setState({type:'NoteText'})
     }
 
@@ -34,9 +33,7 @@ export class AddNote extends React.Component {
 
     onAddTextNote = () => {
         if(!this.state.inputVal||!this.state.inputVal.length===0) return
-        debugger
         var info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
-        // console.log(this.state.inputVal.split(','))
 
         switch (this.state.type) {
             case 'NoteText': info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
@@ -53,7 +50,6 @@ export class AddNote extends React.Component {
             // default:info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
         }
         keepService.addNote(this.state.type, info).then(() => {
-            console.log(this.state.type)
             this.props.onRenderPage()
         })
     }
@@ -63,7 +59,6 @@ export class AddNote extends React.Component {
         this.setState({ inputVal: value })
     }
     render() {
-        console.log(this.props)
         return (
             <div className="add-note-container">
                 <nav>

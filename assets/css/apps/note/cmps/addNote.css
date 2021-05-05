@@ -34,13 +34,16 @@
 }
 
 .video-btn {
-    background-image: url(../../../../_SVG/basic_video.svg);
+    /* background-image: url(../../../../_SVG/basic_video.svg); */
+    background-image: url(../../../../_PNG\ 64/basic_video.png);
 }
 
 .img-btn {
-    background-image: url(../../../../_SVG/basic_picture_multiple.svg);
+    /* background-image: url(../../../../_SVG/basic_picture_multiple.svg); */
+    background-image: url(../../../../_PNG\ 64/basic_picture_multiple.png);
 }
 
 .todo-btn {
-    background-image: url(../../../../_SVG/basic_todo_txt.svg);
+    /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
+    background-image: url(../../../../_PNG\ 64/basic_todo_txt.png);
 }
