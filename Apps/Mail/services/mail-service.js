@@ -10,7 +10,8 @@ export const mailService = {
     readMail,
     toggleMail,
     getMailById,
-    getPrecentOfRead
+    getPrecentOfRead,
+    toggleStar
 }
 var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorage(KEY) : [{
         id: utilService.makeId(),
@@ -20,7 +21,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
-        isSent: false
+        isSent: false,
+        isStared: false
     },
     {
         id: utilService.makeId(),
@@ -30,7 +32,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         isRead: true,
         sentAt: 1551133930594,
         isOpen: false,
-        isSent: false
+        isSent: false,
+        isStared: false
     },
     {
         id: utilService.makeId(),
@@ -40,7 +43,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         isRead: true,
         sentAt: 1551133930594,
         isOpen: false,
-        isSent: false
+        isSent: false,
+        isStared: false
     },
     {
         id: utilService.makeId(),
@@ -50,7 +54,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
-        isSent: false
+        isSent: false,
+        isStared: false
     },
     {
         id: utilService.makeId(),
@@ -60,7 +65,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
-        isSent: false
+        isSent: false,
+        isStared: true
     },
     {
         id: utilService.makeId(),
@@ -70,7 +76,8 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
-        isSent: false
+        isSent: false,
+        isStared: false
     },
     {
         id: utilService.makeId(),
@@ -80,11 +87,25 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
-        isSent: false
+        isSent: false,
+        isStared: false
     },
 ];
 
 function query(filterBy = {}) {
+    if (filterBy === 'byFavorites') {
+        const favoriteMails = gMails.filter(mail => {
+            return mail.isStared;
+        })
+        return Promise.resolve(favoriteMails);
+    }
+    if (filterBy === 'bySent') {
+        const sentMails = gMails.filter(mail => {
+            return mail.isSent;
+        })
+        return Promise.resolve(sentMails);
+
+    }
     if (filterBy) {
         var { isRead, txt } = filterBy
         const filteredMails = gMails.filter(mail => {
@@ -109,7 +130,8 @@ function _createMail(subject, body) {
         isRead: false,
         sentAt: Date.now(),
         isOpen: false,
-        isSent: true
+        isSent: true,
+        isStared: false
     }
     return newMail;
 }
@@ -153,4 +175,10 @@ function getPrecentOfRead() {
     });
     const precent = (counter / gMails.length) * 100
     return Math.round(precent);
+}
+
+function toggleStar(mail) {
+    if (mail.isStared) mail.isStared = false
+    else mail.isStared = true;
+    storageService.saveToStorage(KEY, gMails)
 }

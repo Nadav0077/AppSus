@@ -17,12 +17,15 @@ export class MailApp extends React.Component {
     }
 
     loadMails = () => {
-        
         mailService.query(this.state.filterBy).then((mails) => {
             this.setState({ mails })
-            
         })
     }
+
+    setFilterBy = (str) => {
+        this.setState({filterBy: str},this.loadMails)
+    }
+
     onSetFilter = (filterBy) => {
         this.setState({ filterBy }, this.loadMails)
     }
@@ -30,8 +33,8 @@ export class MailApp extends React.Component {
         const { mails } = this.state
         return (
             <section className="mail-layout">
-                <MailSideBar onSetFilter={this.onSetFilter}/>
-                <MailList loadMails ={this.loadMails} mails={mails} />
+                <MailSideBar onSetFilter={this.onSetFilter} setFilterBy={this.setFilterBy} />
+                <MailList loadMails={this.loadMails} mails={mails} />
             </section>
         )
     }

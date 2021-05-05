@@ -22,7 +22,6 @@ export class MailCompose extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="add-mail">
                 <h1>New Email</h1>

@@ -11,8 +11,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: .3rem;
     cursor: pointer;
+}
+
+.mail-reduced-preview h1 {
+    margin-left: 30px;
+    font-size: larger;
+}
+
+.stared {
+    color: rgb(196, 196, 4);
 }
 
 .upper-preview {

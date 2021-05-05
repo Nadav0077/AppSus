@@ -14,14 +14,29 @@ export function MailPreview({ mail, loadMails }) {
     loadMails()
   }
 
+  function subjectPreview(){
+    if(mail.subject.length > 13){
+      return mail.subject.substring(0,13) + '...'
+    }
+    return mail.subject
+  }
+
+  function onAddStar(){
+
+    mailService.toggleStar(mail)
+  }
+
   return (
     <article onClick={() => {
       onReadMail()
     }} className={mail.isRead ? "mail-preview" : 'mail-preview unread'}>
       <section className="mail-reduced-preview">
+        <h1 onClick={() => {
+          onAddStar()
+        }} className={mail.isStared ? 'stared' : ''}>★</h1>
         <h3>{mail.user}</h3>
-        <h4>{mail.subject}</h4>
-        <small>{ Intl.DateTimeFormat('IL-il').format(mail.sentAt)}</small>
+        <h4>{subjectPreview()}</h4>
+        <small>{Intl.DateTimeFormat('IL-il').format(mail.sentAt)}</small>
       </section>
       {mail.isOpen && <section className="mail-extended-preview">
         <div className="upper-preview">
