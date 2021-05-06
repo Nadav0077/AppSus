@@ -18,15 +18,8 @@ export class MailApp extends React.Component {
     }
 
     loadMails = () => {
-        mailService.query(this.state.filterBy).then((mails) => {
-            if(!this.sortBy) this.setState({ mails })
-            else if(this.sortBy === 'date') {
-                const sortedByDate = mailService.sortByDate(mails)
-                this.setState({ mails: sortedByDate})
-            } else if(this.sortBy === 'subject'){
-                const sortedBySubject = mailService.sortBySubject(mails)
-                this.setState({ mails: sortedBySubject})
-            }
+        mailService.query(this.state.filterBy,this.state.sortBy).then((mails) => {
+            this.setState({ mails })
         })
     }
 

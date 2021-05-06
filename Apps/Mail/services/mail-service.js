@@ -94,7 +94,9 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
 ];
 
-function query(filterBy = {}) {
+function query(filterBy = {}, sortBy) {
+    if (sortBy === 'subject') sortBySubject(gMails);
+    else if (sortBy === 'date') sortByDate(gMails)
     if (filterBy === 'byFavorites') {
         const favoriteMails = gMails.filter(mail => {
             return mail.isStared;
@@ -188,8 +190,8 @@ function toggleStar(mail) {
 
 function sortBySubject(mails) {
     mails.sort((mail1, mail2) => {
-        var subjectA = mail1.toLowerCase();
-        var subjectB = mail2.toLowerCase();
+        var subjectA = mail1.subject.toLowerCase();
+        var subjectB = mail2.subject.toLowerCase();
         if (subjectA < subjectB) return -1;
         if (subjectA > subjectB) return 1;
         return 0
@@ -198,6 +200,6 @@ function sortBySubject(mails) {
 
 function sortByDate(mails) {
     mails.sort((mail1, mail2) => {
-        return mail1 - mail2;
+        return mail2.sentAt - mail1.sentAt;
     });
 }

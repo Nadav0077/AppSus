@@ -30,6 +30,11 @@ export function MailPreview({ mail, loadMails }) {
   function onToggleReadMail(){
     mailService.toggleReadMail(mail)
   }
+
+  function onSaveAsNote(){
+    
+  }
+
   return (
     <article onClick={() => {
       onOpenMail()
@@ -47,7 +52,8 @@ export function MailPreview({ mail, loadMails }) {
         <div className="upper-preview">
           <h1>{mail.subject}</h1>
           <div className="preview-actions">
-            <img className="icon" src="../../../assets/_SVG/basic_trashcan.svg" alt="Delete mail" onClick={() => {onDeleteMail()}}></img>
+          <Link to={`/note/${mail.id}`}><img className="icon" src="../../../assets/_PNG 64/basic_sheet_txt .png" onClick={() => {}}></img></Link>
+            <img className="icon" src="../../../assets/_SVG/basic_trashcan.svg" onClick={() => {onDeleteMail()}}></img>
             <Link to={`/mail/${mail.id}`}><img className="fullscreen-icon" src="../../../assets/_PNG 64/fullscreen.png"/></Link>
           </div>
         </div>
