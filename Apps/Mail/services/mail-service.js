@@ -13,7 +13,8 @@ export const mailService = {
     getPrecentOfRead,
     toggleStar,
     sortBySubject,
-    sortByDate
+    sortByDate,
+    createEmbededLink
 }
 var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorage(KEY) : [{
         id: utilService.makeId(),
@@ -125,7 +126,7 @@ function query(filterBy = {}, sortBy) {
     return Promise.resolve(gMails);
 }
 
-function _createMail(subject, body) {
+function _createMail(subject, body, type) {
     const newMail = {
         id: utilService.makeId(),
         user: 'some-user',
@@ -135,13 +136,28 @@ function _createMail(subject, body) {
         sentAt: Date.now(),
         isOpen: false,
         isSent: true,
-        isStared: false
+        isStared: false,
+        type
     }
     return newMail;
 }
 
-function addMail(subject, body) {
-    const newMail = _createMail(subject, body);
+function createEmbededLink(link) {
+    link = link.replace('watch?v=', 'embed/');
+    console.log('link after replace', link)
+    if (link.split('').findIndex(char => char === '&') === -1) {
+        console.log(link);
+        return link;
+    } else {
+        link = link.slice(0, link.split('').findIndex(char => char === '&'));
+        console.log(link);
+        return link;
+    }
+}
+
+
+function addMail(subject, body, type = null) {
+    const newMail = _createMail(subject, body, type);
     gMails.push(newMail);
     storageService.saveToStorage(KEY, gMails)
 }
