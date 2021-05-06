@@ -4,8 +4,8 @@ import { showUserMsg } from '../../../services/event-bus-service.js'
 
 
 export function MailPreview({ mail, loadMails }) {
-  function onReadMail() {
-    mailService.readMail(mail);
+  function onOpenMail() {
+    // mailService.readMail(mail);
     mailService.toggleMail(mail);
     loadMails()
   }
@@ -17,8 +17,8 @@ export function MailPreview({ mail, loadMails }) {
   }
 
   function subjectPreview(){
-    if(mail.subject.length > 13){
-      return mail.subject.substring(0,13) + '...'
+    if(mail.subject.length > 10){
+      return mail.subject.substring(0,10) + '...'
     }
     return mail.subject
   }
@@ -27,14 +27,18 @@ export function MailPreview({ mail, loadMails }) {
     mailService.toggleStar(mail)
   }
 
+  function onToggleReadMail(){
+    mailService.toggleReadMail(mail)
+  }
   return (
     <article onClick={() => {
-      onReadMail()
+      onOpenMail()
     }} className={mail.isRead ? "mail-preview" : 'mail-preview unread'}>
       <section className="mail-reduced-preview">
-        <h1 onClick={() => {
-          onAddStar()
-        }} className={mail.isStared ? 'stared' : ''}>★</h1>
+        <h1 onClick={() => {onAddStar()}} className={mail.isStared ? 'stared' : ''}>★</h1>
+        {mail.isRead && <img onClick={() => {onToggleReadMail()}} className="icon"  src="../../../assets/_PNG 64/basic_mail_open_text.png"/> }
+        {!mail.isRead && <img onClick={() => {onToggleReadMail()}} className="icon"  src="../../../assets/_PNG 64/basic_mail_multiple.png
+"/> }
         <h3>{mail.user}</h3>
         <h4>{subjectPreview()}</h4>
         <small>{Intl.DateTimeFormat('IL-il').format(mail.sentAt)}</small>
@@ -43,9 +47,7 @@ export function MailPreview({ mail, loadMails }) {
         <div className="upper-preview">
           <h1>{mail.subject}</h1>
           <div className="preview-actions">
-            <img className="icon" src='../../../assets/_SVG/basic_trashcan.svg' onClick={() => {
-              onDeleteMail()
-            }}></img>
+            <img className="icon" src="../../../assets/_SVG/basic_trashcan.svg" alt="Delete mail" onClick={() => {onDeleteMail()}}></img>
             <Link to={`/mail/${mail.id}`}><img className="fullscreen-icon" src="../../../assets/_PNG 64/fullscreen.png"/></Link>
           </div>
         </div>

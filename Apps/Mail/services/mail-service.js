@@ -7,11 +7,13 @@ export const mailService = {
     query,
     addMail,
     deleteMail,
-    readMail,
+    toggleReadMail,
     toggleMail,
     getMailById,
     getPrecentOfRead,
-    toggleStar
+    toggleStar,
+    sortBySubject,
+    sortByDate
 }
 var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorage(KEY) : [{
         id: utilService.makeId(),
@@ -157,8 +159,9 @@ function getMailById(mailId) {
     return Promise.resolve(mail)
 }
 
-function readMail(mail) {
-    mail.isRead = true;
+function toggleReadMail(mail) {
+    if (mail.isRead) mail.isRead = false
+    else mail.isRead = true;
     storageService.saveToStorage(KEY, gMails)
 }
 
@@ -181,4 +184,20 @@ function toggleStar(mail) {
     if (mail.isStared) mail.isStared = false
     else mail.isStared = true;
     storageService.saveToStorage(KEY, gMails)
+}
+
+function sortBySubject(mails) {
+    mails.sort((mail1, mail2) => {
+        var subjectA = mail1.toLowerCase();
+        var subjectB = mail2.toLowerCase();
+        if (subjectA < subjectB) return -1;
+        if (subjectA > subjectB) return 1;
+        return 0
+    });
+}
+
+function sortByDate(mails) {
+    mails.sort((mail1, mail2) => {
+        return mail1 - mail2;
+    });
 }

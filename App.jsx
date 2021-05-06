@@ -6,7 +6,7 @@ import { KeepApp } from './Apps/Keep/KeepApp.jsx'
 import { AppHeader } from './cmps/AppHeader.jsx'
 import { MailDetails } from './Apps/Mail/pages/MailDetails.jsx'
 import { MailCompose } from './Apps/Mail/pages/MailCompose.jsx'
-import { UserMsg } from './Apps/Mail/cmps/UserMsg.jsx'
+import { UserMsg } from './cmps/UserMsg.jsx'
 
 
 export class App extends React.Component {

@@ -1,6 +1,6 @@
 const { Link } = ReactRouterDOM
 import { mailService } from '../services/mail-service.js'
-
+import { showUserMsg } from '../../../services/event-bus-service.js'
 export class MailDetails extends React.Component {
     state = {
         mail: null
@@ -20,6 +20,7 @@ export class MailDetails extends React.Component {
     onDeleteMail = () =>{
         const id = this.props.match.params.mailId;
         mailService.deleteMail(id)
+        showUserMsg('Mail deleted successfully', 'error')
     }
     render() {
         const { mail } = this.state;
@@ -44,7 +45,6 @@ export class MailDetails extends React.Component {
                      }}
                       ><img src="../../../assets/_PNG 64/basic_trashcan.png"/></Link>
                 </div>
-
             </section>
         )
     }
