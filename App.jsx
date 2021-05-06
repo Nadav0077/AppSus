@@ -19,6 +19,7 @@ export class App extends React.Component {
                     <UserMsg />
                     <Switch>
                         <Route component={MailCompose} path="/mail/compose" />
+                        <Route component={MailApp} path="/mail/:noteId?" />
                         <Route component={MailDetails} path="/mail/:mailId" />
                         <Route component={MailApp} path="/mail" />
                         <Route component={KeepApp} path="/note/:mailId?" />

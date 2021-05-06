@@ -47,3 +47,7 @@
 .delete-note-btn {
     background-image: url(../../../../_PNG\ 64/basic_trashcan_remove.png);
 }
+
+.send-btn {
+    background-image: url(../../../../_PNG\ 64/basic_paperplane.png);
+}

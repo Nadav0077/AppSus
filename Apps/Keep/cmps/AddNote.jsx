@@ -1,8 +1,10 @@
-import { keepService } from '../services/keep-service.js'
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch, Link, NavLink } = ReactRouterDOM
+import { keepService } from '../services/keep-service.js'
 import { showUserMsg } from '../../../services/event-bus-service.js'
 import { func } from 'prop-types'
+import { mailService } from '../../Mail/services/mail-service.js'
+
 
 export class AddNote extends React.Component {
 
@@ -41,6 +43,20 @@ export class AddNote extends React.Component {
 
 
     DynamicInput = () => {
+        if (this.props.mailId) {
+            if (this.state.inputVal === null) {
+                mailService.getMailById(this.props.mailId).then(mail=>{
+                    console.log(mail)
+                    this.setState({ type: 'NoteText', inputVal: `${mail.subject}: ${mail.body}` },
+                    this.onAddTextNote)
+                })
+                // mailService.getMailById(this.props.mailId).then(mail =>
+                //     this.setState({ type: 'NoteText', inputVal: `${mail.subject}: ${mail.body}` }))
+                // this.setState({ type: 'NoteText', inputVal: `${subject}: ${body}` })
+                
+                // this.props.history.push('/note')
+            }
+        }
         var placeHolderText = ''
         switch (this.state.type) {
             case 'NoteText': placeHolderText = 'Enter text'
@@ -100,7 +116,7 @@ export class AddNote extends React.Component {
                     <button className="icon img-btn" onClick={() => { this.setState({ type: 'NoteImg' }) }}></button>
                     <button className="icon todo-btn" onClick={() => { this.setState({ type: 'NoteTodos' }) }}></button>
                     <button className="icon video-btn" onClick={() => { this.setState({ type: 'NoteVideo' }) }}></button>
-                    <button className="icon video-btn" onClick={() => { this.setState({ type: 'NoteAudio' }) }}></button>
+                    <button className="icon audio-btn" onClick={() => { this.setState({ type: 'NoteAudio' }) }}></button>
                 </nav>
 
                 <this.DynamicInput />
