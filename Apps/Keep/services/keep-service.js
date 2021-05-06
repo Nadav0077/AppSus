@@ -8,13 +8,17 @@ export const keepService = {
     addNote,
     saveNote,
     delNote,
-    createEmbededLink
-
+    createEmbededLink,
+    getNoteById
 }
 
 
 
 var gNotes = _createNotes()
+
+function getNoteById(id) {
+    return Promise.resolve(gNotes.find(note => note.id === id))
+}
 
 function getNotes() {
     return Promise.resolve(gNotes);
