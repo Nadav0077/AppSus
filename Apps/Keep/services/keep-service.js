@@ -161,6 +161,6 @@ function addNote(type, info) {
         type,
         info
     })
-    storageService.saveToStorage(KEY, gNotes)
+    if (type !== 'NoteAudio') storageService.saveToStorage(KEY, gNotes)
     return Promise.resolve()
 }

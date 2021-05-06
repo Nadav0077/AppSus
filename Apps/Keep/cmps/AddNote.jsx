@@ -2,15 +2,41 @@ import { keepService } from '../services/keep-service.js'
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch, Link, NavLink } = ReactRouterDOM
 import { showUserMsg } from '../../../services/event-bus-service.js'
+import { func } from 'prop-types'
 
 export class AddNote extends React.Component {
-    
+
     state = {
         inputVal: null,
         type: null
     }
     componentDidMount() {
-        this.setState({type:'NoteText'})
+        this.setState({ type: 'NoteText' })
+    }
+
+    loadAudioFromInput = (ev) => {
+        var reader = new FileReader()
+        this.setState({ inputVal: reader.result })
+        const func = (url) => {
+            this.setState({ inputVal: url })
+        }
+
+        reader.onload = function (event) {
+            var aud = new Audio()
+            aud.src = event.target.result
+            func(aud.src)
+            console.log(aud.src)
+        }
+        reader.readAsDataURL(ev.target.files[0])
+        console.log(reader.result)
+
+    }
+
+    audioInput = () => {
+        return <form onSubmit={(ev) => {
+            ev.preventDefault();
+            this.onAddTextNote()
+        }}> <input accept="audio/*" onChange={this.loadAudioFromInput} type="file" /><button className="icon">+</button></form>
     }
 
 
@@ -25,6 +51,8 @@ export class AddNote extends React.Component {
                 break;
             case 'NoteVideo': placeHolderText = 'Enter video url'
                 break;
+            case 'NoteAudio': return <this.audioInput />
+
         }
         return <form onSubmit={(ev) => {
             ev.preventDefault();
@@ -33,7 +61,8 @@ export class AddNote extends React.Component {
     }
 
     onAddTextNote = () => {
-        if(!this.state.inputVal||!this.state.inputVal.length===0) return
+        console.log(this.state.inputVal)
+        if (!this.state.inputVal || !this.state.inputVal.length === 0) return
         var info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
 
         switch (this.state.type) {
@@ -48,11 +77,14 @@ export class AddNote extends React.Component {
                 break;
             case 'NoteVideo': info = { url: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
                 break;
+            case 'NoteAudio': info = { url: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
+                break;
             // default:info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
         }
+        console.log(info)
         keepService.addNote(this.state.type, info).then(() => {
             this.props.onRenderPage()
-            showUserMsg('Added Note!','success')
+            showUserMsg('Added Note!', 'success')
         })
     }
 
@@ -68,6 +100,7 @@ export class AddNote extends React.Component {
                     <button className="icon img-btn" onClick={() => { this.setState({ type: 'NoteImg' }) }}></button>
                     <button className="icon todo-btn" onClick={() => { this.setState({ type: 'NoteTodos' }) }}></button>
                     <button className="icon video-btn" onClick={() => { this.setState({ type: 'NoteVideo' }) }}></button>
+                    <button className="icon video-btn" onClick={() => { this.setState({ type: 'NoteAudio' }) }}></button>
                 </nav>
 
                 <this.DynamicInput />

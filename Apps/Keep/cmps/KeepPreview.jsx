@@ -36,6 +36,13 @@ export class KeepPreview extends React.Component {
 
     }
 
+    NoteAudio = (props) => {
+        return <audio controls>
+            <source src={props.note.info.url} type="audio/ogg" />
+            <source src={props.note.info.url} type="audio/mpeg" />
+                    Your browser does not support the audio element.
+      </audio>
+    }
 
     NoteImg = (props) => {
         return <img className="img-note" src={props.note.info.url} alt={props.note.info.title} />
@@ -46,8 +53,9 @@ export class KeepPreview extends React.Component {
     }
 
     NoteVideo = (props) => {
-        
-        return <iframe height="400px" width="100%" frameBorder="0" allowFullScreen src={keepService.createEmbededLink(props.note.info.url)}></iframe>
+
+        return <iframe height="400px" width="100%" frameBorder="0" allowFullScreen
+            src={keepService.createEmbededLink(props.note.info.url)}></iframe>
     }
 
     DynamicCmp = (props) => {
@@ -60,6 +68,8 @@ export class KeepPreview extends React.Component {
                 return <this.NoteText {...props} />
             case 'NoteVideo':
                 return <this.NoteVideo {...props} />
+            case 'NoteAudio':
+                return <this.NoteAudio {...props} />
             default:
                 return <h1>nana</h1>
         }
@@ -123,7 +133,7 @@ export class KeepPreview extends React.Component {
     }
 
     handleTextChange = ({ target }) => {
-        showUserMsg('Note Updated!','success')
+        showUserMsg('Note Updated!', 'success')
         this.setState({ inputVal: target.value })
     }
 
