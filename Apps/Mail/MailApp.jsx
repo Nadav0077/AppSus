@@ -62,7 +62,6 @@ export class MailApp extends React.Component {
             this.addNoteAsMail()
         }
         const { mails } = this.state
-        console.log(mails)
         return (
             <section className="mail-layout">
                 <MailSideBar onSetFilter={this.onSetFilter} setFilterBy={this.setFilterBy} onSetSort={this.onSetSort} setSortBy={this.setSortBy} />

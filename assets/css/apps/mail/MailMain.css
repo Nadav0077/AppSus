@@ -45,8 +45,22 @@
 }
 
 .mail-extended-preview img {
-    height: 20px;
+    height: 25px;
     width: auto;
+}
+
+.mail-extended-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-preview .note-img {
+    height: 150px;
+}
+
+.content-preview {
+    display: flex;
+    justify-content: center;
 }
 
 .mail-extended-preview p {
@@ -139,6 +153,10 @@
     align-items: center;
 }
 
+.mail-full .content img {
+    height: 80%;
+}
+
 .mail-full .upper h6 {
     font-size: 25px
 }
@@ -220,7 +238,8 @@
     height: 40px;
 }
 
-.fullscreen-icon {
+.fullscreen-icon,
+.note-icon {
     margin-left: 5px;
     margin-top: 5px
 }

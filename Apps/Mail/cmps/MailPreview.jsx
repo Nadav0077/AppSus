@@ -48,15 +48,15 @@ export function MailPreview({ mail, loadMails }) {
         <div className="upper-preview">
           <h1>{mail.subject}</h1>
           <div className="preview-actions">
-            <Link to={`/note/${mail.id}`}><img className="icon" src="../../../assets/_PNG 64/basic_sheet_txt .png" onClick={() => { }}></img></Link>
+            <Link to={`/note/${mail.id}`}><img className="note-icon" src="../../../assets/_PNG 64/basic_sheet_txt .png" ></img></Link>
             <img className="icon" src="../../../assets/_SVG/basic_trashcan.svg" onClick={() => { onDeleteMail() }}></img>
-            <Link to={`/mail/${mail.id}`}><img className="fullscreen-icon" src="../../../assets/_PNG 64/fullscreen.png" /></Link>
+            <Link to={`/mail/details/${mail.id}`}><img className="fullscreen-icon" src="../../../assets/_PNG 64/fullscreen.png" /></Link>
           </div>
         </div>
         <h6>{mail.user} <small>{mail.user}@gmail.com</small></h6>
         <div className="content-preview">
           {mail.type !== 'NoteImg' && mail.type !== 'NoteVideo' && mail.type !== 'NoteAudio' && <p>{mail.body}</p>}
-          {mail.type === 'NoteImg' && <img src={mail.body} />}
+          {mail.type === 'NoteImg' && <img className="note-img" src={mail.body} />}
           {mail.type === 'NoteAudio' && <audio controls>
             <source src={mail.body} type="audio/ogg" />
             <source src={mail.body} type="audio/mpeg" />

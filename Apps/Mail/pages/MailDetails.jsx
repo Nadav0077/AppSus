@@ -17,7 +17,7 @@ export class MailDetails extends React.Component {
         })
     }
 
-    onDeleteMail = () =>{
+    onDeleteMail = () => {
         const id = this.props.match.params.mailId;
         mailService.deleteMail(id)
         showUserMsg('Mail deleted successfully', 'error')
@@ -25,6 +25,7 @@ export class MailDetails extends React.Component {
     render() {
         const { mail } = this.state;
         if (!mail) return <h1>Loading...</h1>
+        console.log(this.props.params)
         return (
 
             <section className="mail-full">
@@ -35,15 +36,23 @@ export class MailDetails extends React.Component {
                 </div>
                 <div>
                     <div className="content">
-                        <p>{mail.body}</p>
+                        {mail.type !== 'NoteImg' && mail.type !== 'NoteVideo' && mail.type !== 'NoteAudio' && <p>{mail.body}</p>}
+                        {mail.type === 'NoteImg' && <img className="noteImg" src={mail.body} />}
+                        {mail.type === 'NoteAudio' && <audio controls>
+                            <source src={mail.body} type="audio/ogg" />
+                            <source src={mail.body} type="audio/mpeg" />
+                    Your browser does not support the audio element.
+      </audio>}
+                        {mail.type === 'NoteVideo' && <iframe height="400px" width="100%" frameBorder="0" allowFullScreen
+                            src={mailService.createEmbededLink(mail.body)}></iframe>}
                     </div>
                 </div>
                 <div className="actions">
-                     <Link to="/mail" ><img src="../../../assets/_PNG 64/back-button.png"/></Link>
-                     <Link to="/mail" onClick={() =>{
-                         this.onDeleteMail()
-                     }}
-                      ><img src="../../../assets/_PNG 64/basic_trashcan.png"/></Link>
+                    <Link to="/mail" ><img src="../../../assets/_PNG 64/back-button.png" /></Link>
+                    <Link to="/mail" onClick={() => {
+                        this.onDeleteMail()
+                    }}
+                    ><img src="../../../assets/_PNG 64/basic_trashcan.png" /></Link>
                 </div>
             </section>
         )
