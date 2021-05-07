@@ -24,9 +24,9 @@
 
 .icon {
     cursor: pointer;
-    font-size: 2.5rem;
-    height: 45px;
-    width: 45px;
+    font-size: 1.8rem;
+    height: 30px;
+    width: 30px;
     border: transparent;
     background-color: transparent;
     background-position: center;
@@ -51,4 +51,12 @@
 .audio-btn {
     /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
     background-image: url(../../../../_PNG\ 64/basic_headset.png);
+}
+
+@media screen and (max-width: 700px) {
+    .icon {
+        font-size: 2.5rem;
+        height: 45px;
+        width: 45px;
+    }
 }
