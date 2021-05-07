@@ -18,8 +18,8 @@
 }
 
 .note-panel input[type=color] {
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     border-width: 0;
     border-radius: 10px;
 }
@@ -50,4 +50,11 @@
 
 .send-btn {
     background-image: url(../../../../_PNG\ 64/basic_paperplane.png);
+}
+
+@media screen and (max-width: 700px) {
+    .keep-preview input[type=color] {
+        height: 45px;
+        width: 45px;
+    }
 }
