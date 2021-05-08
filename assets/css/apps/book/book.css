@@ -87,6 +87,7 @@
 
 .book-input {
     width: 50%;
+    z-index: 0;
 }
 
 .title-filter-container,

@@ -98,6 +98,13 @@
     text-align: center;
 }
 
+.compose-icon-side {
+    height: 50px;
+    background-color: rgba(212, 0, 255, 0.269);
+    padding: 20px;
+    border-radius: 50%;
+}
+
 @media screen and (max-width: 700px) {
     .search-bar {
         flex-direction: row;
@@ -116,6 +123,7 @@
     }
     .compose-ball {
         display: block;
+        z-index: 0;
     }
     .compose {
         display: none;

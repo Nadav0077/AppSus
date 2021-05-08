@@ -19,10 +19,12 @@ export class MailSideBar extends React.Component {
         return (
             <section className="mail-side-bar">
                 <div className="search-bar">
+                    <div className="compose-ball-side">
+                        <Link className="compose" to="/mail/compose"><img className="compose-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/main/assets/_PNG%2064/pencil.png" /></Link>
+                    </div>
                     <MailFilter onSetFilter={this.props.onSetFilter} />
                     <MailSort onSetSort={this.props.onSetSort} />
                 </div>
-                <Link className="compose" to="/mail/compose">Compose +</Link>
                 <MailStatus />
                 <nav className="mail-nav">
                     <ul className="clean-list">
@@ -32,7 +34,7 @@ export class MailSideBar extends React.Component {
                     </ul>
                 </nav>
                 <div className="compose-ball">
-                    <Link to="/mail/compose"><img className="compose-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/main/assets/_PNG%2064/pencil.png"/></Link>
+                    <Link to="/mail/compose"><img className="compose-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/main/assets/_PNG%2064/pencil.png" /></Link>
                 </div>
             </section>
         )

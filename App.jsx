@@ -15,11 +15,16 @@ import { BookDetails } from './Apps/Book/BookDetails.jsx'
 
 
 export class App extends React.Component {
+
+    onToggleMenu = () => {
+        document.body.classList.toggle('menu-open');
+    }
     render() {
         return (
             // <Book></Book>
             <Router>
-                <AppHeader />
+                <div class="main-screen" onClick={this.onToggleMenu}></div>
+                <AppHeader onToggleMenu={this.onToggleMenu}/>
                 <main>
                     <UserMsg />
                     <Switch>
