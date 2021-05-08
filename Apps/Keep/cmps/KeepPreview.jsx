@@ -84,7 +84,7 @@ export class KeepPreview extends React.Component {
                 <button className="icon pin-btn" onClick={() => { this.props.changePin(this.state.note) }}></button>
                 <button className="icon delete-note-btn" onClick={() => { this.props.onDeleteNote(this.state.note) }}></button>
                 {/* <button className="icon send-btn" onClick={() => {  }}></button> */}
-                <Link to={`/mail/${this.state.note.id}`}><img className="icon" src="../../../assets/_PNG 64/basic_paperplane.png" onClick={() => {}}></img></Link>
+                <Link to={`/mail/${this.state.note.id}`}><div className="icon send-btn"></div></Link>
             </div>
 
 
