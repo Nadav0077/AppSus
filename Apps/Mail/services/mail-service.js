@@ -115,11 +115,11 @@ function query(filterBy = {}, sortBy) {
         var { isRead, txt } = filterBy
         const filteredMails = gMails.filter(mail => {
             if (isRead === 'all') {
-                return (mail.subject.includes(txt) || mail.body.includes(txt) || mail.user.includes(txt))
+                return (mail.subject.includes(txt.toLowerCase()) || mail.body.toLowerCase().includes(txt.toLowerCase()) || mail.user.includes(txt.toLowerCase()))
             } else if (isRead === 'readed') {
-                return (mail.subject.includes(txt) || mail.body.includes(txt) || mail.user.includes(txt)) && mail.isRead
+                return (mail.subject.toLowerCase().includes(txt.toLowerCase()) || mail.body.toLowerCase().includes(txt.toLowerCase()) || mail.user.toLowerCase().includes(txt.toLowerCase())) && mail.isRead
             }
-            return (mail.subject.includes(txt) || mail.body.includes(txt) || mail.user.includes(txt)) && !mail.isRead
+            return (mail.subject.toLowerCase().includes(txt.toLowerCase()) || mail.body.toLowerCase().includes(txt.toLowerCase()) || mail.user.toLowerCase().includes(txt.toLowerCase())) && !mail.isRead
         })
         return Promise.resolve(filteredMails);
     }
