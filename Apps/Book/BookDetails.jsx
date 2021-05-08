@@ -65,7 +65,7 @@ export class BookDetails extends React.Component {
         var star = "\u2B50"
         var reviews = this.state.book.reviews
         console.log(this.state.book)
-        if (!reviews) return <h1>There are no reviews for this book!</h1>
+        if (!reviews) return <h3>There are no reviews for this book!</h3>
         return <div className="review-list">
             {reviews.map((review, idx) => {
                 return <article key={idx}>

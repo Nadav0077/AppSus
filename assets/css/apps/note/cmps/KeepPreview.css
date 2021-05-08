@@ -62,3 +62,10 @@
         width: 45px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .keep-preview input[type=color] {
+        height: 30px;
+        width: 30px;
+    }
+}

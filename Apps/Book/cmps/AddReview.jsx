@@ -1,4 +1,5 @@
 import { bookService } from '../services/book-service.js'
+import { showUserMsg } from '../../../services/event-bus-service.js'
 
 export class AddReview extends React.Component {
 
@@ -18,7 +19,11 @@ export class AddReview extends React.Component {
     onAddReview = () => {
         const { fullName, readedAt, ranking, txt } = this.state.review
         console.log(this.state.review)
-        bookService.addReview(this.props.bookId, txt, ranking, fullName, readedAt)
+        if (txt && ranking && fullName && readedAt) {
+            bookService.addReview(this.props.bookId, txt, ranking, fullName, readedAt)
+            // showUserMsg('Added review!', 'success')
+        }
+        // else showUserMsg('Please fill the fields!', 'error')
     }
 
     handleChange = ({ target }) => {
@@ -35,10 +40,10 @@ export class AddReview extends React.Component {
         console.log(this.props)
         return (
             <div className="add-review-container">
-                <form className="add-review-container" onSubmit={(ev)=>{
+                <form className="add-review-container" onSubmit={(ev) => {
                     ev.preventDefault();
                     this.onAddReview()
-                    }}>
+                }}>
                     <div className="name-review-container">
 
                         <label htmlFor="fullName">Name:</label>
@@ -54,7 +59,7 @@ export class AddReview extends React.Component {
                     <div className="ranking-review-container">
 
                         <label htmlFor="ranking">Ranking:</label>
-                        <input  className="book-input" min="1" max="5" type="number" id="ranking" name="ranking" onChange={this.handleChange} />
+                        <input className="book-input" min="1" max="5" type="number" id="ranking" name="ranking" onChange={this.handleChange} />
                     </div>
                     <div className="txt-review-container">
                         <label htmlFor="txt">Free Text:</label>
