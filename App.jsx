@@ -23,7 +23,7 @@ export class App extends React.Component {
         return (
             // <Book></Book>
             <Router>
-                <div class="main-screen" onClick={this.onToggleMenu}></div>
+                <div className="main-screen" onClick={this.onToggleMenu}></div>
                 <AppHeader onToggleMenu={this.onToggleMenu}/>
                 <main>
                     <UserMsg />
