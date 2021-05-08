@@ -53,10 +53,10 @@ export class MailCompose extends React.Component {
                 </form>
                 }
                 <div className="actions">
-                    <Link to="/mail" ><img src="../../../assets/_PNG 64/back-button.png"/></Link>
+                    <Link to="/mail" ><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/back-button.png"/></Link>
                     <Link to="/mail" onClick={() =>{
                         this.onSendMail()
-                    }}><img src="../../../assets/_PNG 64/basic_paperplane.png"></img></Link>
+                    }}><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/basic_paperplane.png"></img></Link>
                 </div>
             </div>
             
