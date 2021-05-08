@@ -54,19 +54,19 @@ export class BookFilter extends React.Component {
                     <div className="title-filter-container">
 
                         <label htmlFor="byTitle">By title</label>
-                        <input type="text" id="byTitle" name="title" value={title} onChange={(ev) => this.handleChange(ev, true)} />
+                        <input className="book-input" type="text" id="byTitle" name="title" value={title} onChange={(ev) => this.handleChange(ev, true)} />
                     </div>
 
                     <div className="price-filter-container">
                         <label htmlFor="price">Min Price</label>
-                        <input type="number" id="minPrice" name="minPrice" value={minPrice} onChange={(ev) => this.handleChange(ev, true)} />
+                        <input className="book-input" type="number" id="minPrice" name="minPrice" value={minPrice} onChange={(ev) => this.handleChange(ev, true)} />
                         <label htmlFor="maxPrice">Max Price</label>
-                        <input type="number" id="maxPrice" name="maxPrice" value={maxPrice} onChange={(ev) => this.handleChange(ev, true)} />
+                        <input className="book-input" type="number" id="maxPrice" name="maxPrice" value={maxPrice} onChange={(ev) => this.handleChange(ev, true)} />
                     </div>
                 </form>
                 {/* </section> */}
                 <div className="search-container">
-                    <input type="search" onKeyUp={(ev) => this.handleChange(ev, false)} placeholder="Search a book..." />
+                    <input className="book-input" type="search" onKeyUp={(ev) => this.handleChange(ev, false)} placeholder="Search a book..." />
                     {this.state.books.length !== 0 && <SearchList books={this.state.books} onAddBook={this.onAddBook} />}
                 </div>
             </div>

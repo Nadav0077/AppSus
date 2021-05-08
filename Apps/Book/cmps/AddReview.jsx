@@ -42,23 +42,23 @@ export class AddReview extends React.Component {
                     <div className="name-review-container">
 
                         <label htmlFor="fullName">Name:</label>
-                        <input type="text" id="fullName" name="fullName" onChange={this.handleChange} />
+                        <input className="book-input" type="text" id="fullName" name="fullName" onChange={this.handleChange} />
                     </div>
 
                     <div className="date-review-container">
 
                         <label htmlFor="readedAt">Date:</label>
-                        <input placeholder="dd-mm-yyyy" type="date" id="readedAt" name="readedAt" onChange={this.handleChange} />
+                        <input className="book-input" placeholder="dd-mm-yyyy" type="date" id="readedAt" name="readedAt" onChange={this.handleChange} />
                     </div>
 
                     <div className="ranking-review-container">
 
                         <label htmlFor="ranking">Ranking:</label>
-                        <input  min="1" max="5" type="number" id="ranking" name="ranking" onChange={this.handleChange} />
+                        <input  className="book-input" min="1" max="5" type="number" id="ranking" name="ranking" onChange={this.handleChange} />
                     </div>
                     <div className="txt-review-container">
                         <label htmlFor="txt">Free Text:</label>
-                        <input type="textarea" id="txt" name="txt" onChange={this.handleChange} />
+                        <input className="book-input" type="textarea" id="txt" name="txt" onChange={this.handleChange} />
                     </div>
 
 
