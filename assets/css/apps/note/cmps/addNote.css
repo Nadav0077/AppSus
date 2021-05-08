@@ -1,75 +1,78 @@
-.add-note-container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
-    gap: 10px;
-}
-
-.add-note-container nav {
-    display: flex;
-    gap: 20px;
-}
-
-.add-note-container form {
-    display: flex;
-}
-
-.add-note-container input {
-    width: 350px;
-    padding: 10px;
-    border-color: rgba(255, 248, 220, 0.37);
-    border-radius: 5px;
-}
-
-.icon {
-    cursor: pointer;
-    font-size: 1.8rem;
-    height: 30px;
-    width: 30px;
-    border: transparent;
-    background-color: transparent;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.video-btn {
-    /* background-image: url(../../../../_SVG/basic_video.svg); */
-    /* background-image: url(../../../../_PNG\ 64/basic_video.png); */
-    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_video.svg);
-}
-
-.img-btn {
-    /* background-image: url(../../../../_SVG/basic_picture_multiple.svg); */
-    /* background-image: url(../../../../_PNG\ 64/basic_picture_multiple.png); */
-    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_picture_multiple.svg);
-}
-
-.todo-btn {
-    /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
-    /* background-image: url(../../../../_PNG\ 64/basic_todo_txt.png); */
-    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_todo_txt.svg);
-}
-
-.audio-btn {
-    /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
-    /* background-image: url(../../../../_PNG\ 64/basic_headset.png); */
-    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_headset.svg);
-}
-
-@media screen and (max-width: 700px) {
-    .icon {
-        font-size: 2.5rem;
-        height: 45px;
-        width: 45px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .icon {
-        font-size: 2rem;
-        height: 30px;
-        width: 30px;
-    }
-}
+                .add-note-container {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 30px;
+                    gap: 10px;
+                }
+                
+                .add-note-container nav {
+                    display: flex;
+                    gap: 20px;
+                }
+                
+                .add-note-container form {
+                    display: flex;
+                }
+                
+                .add-note-container input {
+                    width: 350px;
+                    padding: 10px;
+                    border-color: rgba(255, 248, 220, 0.37);
+                    border-radius: 5px;
+                }
+                
+                .icon {
+                    cursor: pointer;
+                    font-size: 1.8rem;
+                    height: 30px;
+                    width: 30px;
+                    border: transparent;
+                    background-color: transparent;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+                
+                .video-btn {
+                    /* background-image: url(../../../../_SVG/basic_video.svg); */
+                    /* background-image: url(../../../../_PNG\ 64/basic_video.png); */
+                    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_video.svg);
+                }
+                
+                .img-btn {
+                    /* background-image: url(../../../../_SVG/basic_picture_multiple.svg); */
+                    /* background-image: url(../../../../_PNG\ 64/basic_picture_multiple.png); */
+                    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_picture_multiple.svg);
+                }
+                
+                .todo-btn {
+                    /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
+                    /* background-image: url(../../../../_PNG\ 64/basic_todo_txt.png); */
+                    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_todo_txt.svg);
+                }
+                
+                .audio-btn {
+                    /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
+                    /* background-image: url(../../../../_PNG\ 64/basic_headset.png); */
+                    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_headset.svg);
+                }
+                
+                @media screen and (max-width: 700px) {
+                    .icon {
+                        font-size: 2.5rem;
+                        height: 45px;
+                        width: 45px;
+                    }
+                    .add-note-container input {
+                        max-width: 320px;
+                    }
+                }
+                
+                @media screen and (max-width: 700px) {
+                    .icon {
+                        font-size: 2rem;
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
