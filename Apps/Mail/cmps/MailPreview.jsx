@@ -43,12 +43,12 @@ export function MailPreview({ mail, loadMails }) {
           ev.stopPropagation();
            onToggleReadMail()
            loadMails()
-           }} className="icon" src="../../../assets/_PNG 64/basic_mail_open_text.png" />}
+           }} className="icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/basic_mail_open_text.png" />}
         {!mail.isRead && <img onClick={(ev) => { 
           ev.stopPropagation();
           onToggleReadMail()
           loadMails() 
-        }} className="icon" src="../../../assets/_PNG 64/basic_mail_multiple.png
+        }} className="icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/basic_mail_multiple.png
 "/>}
         <h3>{mail.user}</h3>
         <h4>{subjectPreview()}</h4>
