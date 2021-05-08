@@ -106,7 +106,7 @@
     cursor: pointer;
 }
 
-.search-container {
+.book-search-container {
     padding-bottom: 25px;
     display: flex;
     flex-direction: column;
@@ -257,7 +257,7 @@
 }
 
 @media screen and (min-width: 1100px) {
-    .search-container {
+    .book-search-container {
         width: 80%;
     }
     .book-details {

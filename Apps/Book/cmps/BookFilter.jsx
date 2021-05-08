@@ -65,7 +65,7 @@ export class BookFilter extends React.Component {
                     </div>
                 </form>
                 {/* </section> */}
-                <div className="search-container">
+                <div className="book-search-container">
                     <input className="book-input" type="search" onKeyUp={(ev) => this.handleChange(ev, false)} placeholder="Search a book..." />
                     {this.state.books.length !== 0 && <SearchList books={this.state.books} onAddBook={this.onAddBook} />}
                 </div>
