@@ -11,8 +11,8 @@ body {
 }
 
 .home-container img {
-    height: auto;
-    max-width: 400px;
+    max-height: 300px;
+    width: auto;
 }
 
 .home-container div {

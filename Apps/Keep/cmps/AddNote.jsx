@@ -43,9 +43,9 @@ export class AddNote extends React.Component {
     DynamicInput = () => {
         if (this.props.mailId) {
             if (this.state.inputVal === null) {
-                mailService.getMailById(this.props.mailId).then(mail=>{
+                mailService.getMailById(this.props.mailId).then(mail => {
                     this.setState({ type: 'NoteText', inputVal: `${mail.subject}: ${mail.body}` },
-                    this.onAddNote)
+                        this.onAddNote)
                 })
             }
         }

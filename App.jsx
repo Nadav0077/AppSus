@@ -39,7 +39,7 @@ export class App extends React.Component {
                         <Route component={Home} path="/" />
                     </Switch>
                 </main>
-                <footer>coffeerights</footer>
+                <footer>Tamir's and Nadav's Inc.</footer>
             </Router>
         )
     }

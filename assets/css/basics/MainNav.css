@@ -22,7 +22,7 @@
 }
 
 .main-nav *:hover {
-    color: black;
+    color: rgba(0, 0, 0, 0.26);
 }
 
 .btn-menu {

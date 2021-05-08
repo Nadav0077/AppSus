@@ -65,6 +65,31 @@ function saveNote(note) {
 function _createNotes() {
     return (storageService.loadFromStorage(KEY)) ? storageService.loadFromStorage(KEY) : [{
             id: utilService.makeId(),
+            isPinned: true,
+            type: "NoteImg",
+            info: {
+                url: "https://media.wired.com/photos/5dd593a829b9c40008b179b3/191:100/w_2338,h_1224,c_limit/Cul-BabyYoda_mandalorian-thechild-1_af408bfd.jpg",
+                title: "Me playing Mi",
+                style: {
+                    backgroundColor: "#B247FF"
+                }
+            },
+
+        },
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: true,
+            info: {
+                txt: "Powerful APP!",
+                style: {
+                    backgroundColor: "#B298EF"
+                }
+            }
+
+        },
+        {
+            id: utilService.makeId(),
             type: "NoteText",
             isPinned: true,
             info: {
@@ -91,12 +116,24 @@ function _createNotes() {
         {
             id: utilService.makeId(),
             isPinned: false,
+            type: "NoteVideo",
+            info: {
+                url: "https://www.youtube.com/watch?v=VvU27gvAK40",
+                title: "Me playing Mi",
+                style: {
+                    backgroundColor: "#C997AF"
+                }
+            }
+        },
+        {
+            id: utilService.makeId(),
+            isPinned: false,
             type: "NoteTodos",
             info: {
                 label: "How was it:",
                 todos: [
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do this", doneAt: 187111111 }
+                    { txt: "Work out", doneAt: null },
+                    { txt: "Eat 10 tons of pizza", doneAt: 107111111 }
                 ],
                 style: {
                     backgroundColor: "#B247FF"
@@ -110,8 +147,8 @@ function _createNotes() {
             info: {
                 label: "How was it:",
                 todos: [
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do this", doneAt: 187111111 }
+                    { txt: "Fix it", doneAt: null },
+                    { txt: "Destroy the code", doneAt: 187111111 }
                 ],
                 style: {
                     backgroundColor: "#FF99FF"
@@ -120,13 +157,13 @@ function _createNotes() {
         },
         {
             id: utilService.makeId(),
-            isPinned: false,
+            isPinned: true,
             type: "NoteTodos",
             info: {
                 label: "How was it:",
                 todos: [
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do this", doneAt: 187111111 }
+                    { txt: "Be Powerfull!", doneAt: null },
+                    { txt: "Be Magical!", doneAt: 187111111 }
                 ],
                 style: {
                     backgroundColor: "#4782ff"
@@ -140,16 +177,17 @@ function _createNotes() {
             info: {
                 label: "How was it:",
                 todos: [
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do this", doneAt: 187111111 },
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do that", doneAt: null },
+                    { txt: "Eat()", doneAt: null },
+                    { txt: "Sleep()", doneAt: null },
+                    { txt: "Code()", doneAt: 1620495822369 },
+                    { txt: "Repeat()", doneAt: null },
                 ],
                 style: {
                     backgroundColor: "#475dff"
                 }
             }
-        }, {
+        },
+        {
             id: utilService.makeId(),
             isPinned: false,
             type: "NoteImg",
@@ -161,7 +199,8 @@ function _createNotes() {
                 }
             },
 
-        }
+        },
+
     ]
 
 }
