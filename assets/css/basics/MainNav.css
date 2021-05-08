@@ -73,8 +73,6 @@
     transition: .3s;
 }
 
-.app-header li a:hover {}
-
 .app-header li .active {
     font-weight: bold;
     color: rgb(145, 145, 145);
