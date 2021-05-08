@@ -11,7 +11,6 @@
     padding: 10px;
     border-color: rgba(255, 248, 220, 0.37);
     border-radius: 5px;
-    z-index: 0;
 }
 
 .search-container select {
@@ -19,5 +18,4 @@
     padding: 10px;
     border-color: rgba(255, 248, 220, 0.37);
     border-radius: 5px;
-    z-index: 0;
 }

@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
+.app-header {
+    z-index: 100000;
+}
+
 .app-header h1 {
     cursor: pointer;
     padding: 5px;
