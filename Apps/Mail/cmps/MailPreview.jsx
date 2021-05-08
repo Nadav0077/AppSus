@@ -32,13 +32,23 @@ export function MailPreview({ mail, loadMails }) {
   }
 
   return (
-    <article onClick={() => {
-      onOpenMail()
-    }} className={mail.isRead ? "mail-preview" : 'mail-preview unread'}>
+    <article onClick={() => {onOpenMail()}} className={mail.isRead ? "mail-preview" : 'mail-preview unread'}>
       <section className="mail-reduced-preview">
-        <h1 onClick={() => { onAddStar() }} className={mail.isStared ? 'stared' : ''}>★</h1>
-        {mail.isRead && <img onClick={() => { onToggleReadMail() }} className="icon" src="../../../assets/_PNG 64/basic_mail_open_text.png" />}
-        {!mail.isRead && <img onClick={() => { onToggleReadMail() }} className="icon" src="../../../assets/_PNG 64/basic_mail_multiple.png
+        <h1 onClick={(ev) => {
+          ev.stopPropagation();
+          onAddStar()
+          loadMails()
+            }} className={mail.isStared ? 'stared' : ''}>★</h1>
+        {mail.isRead && <img onClick={(ev) => {
+          ev.stopPropagation();
+           onToggleReadMail()
+           loadMails()
+           }} className="icon" src="../../../assets/_PNG 64/basic_mail_open_text.png" />}
+        {!mail.isRead && <img onClick={(ev) => { 
+          ev.stopPropagation();
+          onToggleReadMail()
+          loadMails() 
+        }} className="icon" src="../../../assets/_PNG 64/basic_mail_multiple.png
 "/>}
         <h3>{mail.user}</h3>
         <h4>{subjectPreview()}</h4>
@@ -48,9 +58,10 @@ export function MailPreview({ mail, loadMails }) {
         <div className="upper-preview">
           <h1>{mail.subject}</h1>
           <div className="preview-actions">
-            <Link to={`/note/${mail.id}`}><img className="note-icon" src="../../../assets/_PNG 64/basic_sheet_txt .png" ></img></Link>
-            <img className="icon" src="../../../assets/_SVG/basic_trashcan.svg" onClick={() => { onDeleteMail() }}></img>
-            <Link to={`/mail/details/${mail.id}`}><img className="fullscreen-icon" src="../../../assets/_PNG 64/fullscreen.png" /></Link>
+            <Link to={`/note/${mail.id}`}><img className="note-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_sheet_txt .svg" ></img></Link>
+            <img className="icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_trashcan.svg" onClick={() => { onDeleteMail() }}></img>
+            <Link to={`/mail/details/${mail.id}`}><img className="fullscreen-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/fullscreen.png" /></Link>
+            <Link to={`/mail/compose/${mail.id}`}><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/back-reply-svgrepo-com.svg" /></Link>
           </div>
         </div>
         <h6>{mail.user} <small>{mail.user}@gmail.com</small></h6>

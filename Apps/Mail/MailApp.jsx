@@ -63,9 +63,11 @@ export class MailApp extends React.Component {
         }
         const { mails } = this.state
         return (
-            <section className="mail-layout">
+            <section >
+                <div className="mail-layout">
                 <MailSideBar onSetFilter={this.onSetFilter} setFilterBy={this.setFilterBy} onSetSort={this.onSetSort} setSortBy={this.setSortBy} />
                 <MailList loadMails={this.loadMails} mails={mails} />
+                </div>
             </section>
         )
     }

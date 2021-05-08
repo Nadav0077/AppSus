@@ -22,10 +22,8 @@ export class MailFilter extends React.Component {
     render() {
         const { txt } = this.state.filterBy
         return (
-            <form className="mail-filter" onSubmit={this.onFilter}>
-                <label htmlFor="byText">By Text</label>
-                <input type="text" id="byText" name="txt" value={txt} onChange={this.handleChange} />
-                <label htmlFor="isRead">Read/Unread</label>
+            <form className="mail-filter">
+                <input placeholder="search mail 🔎" type="text" id="byText" name="txt" value={txt} onChange={this.handleChange} />
                 <select id="isRead" name="isRead" onChange={this.handleChange}>
                         <option value="all">All</option>
                         <option value="readed">Readed</option>

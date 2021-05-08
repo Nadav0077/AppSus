@@ -1,0 +1,10 @@
+.mail-list {
+    flex-basis: 80%;
+    height: 600px;
+    overflow: auto;
+}
+
+.mail-list h1 {
+    display: flex;
+    justify-content: center;
+}

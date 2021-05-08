@@ -49,10 +49,8 @@ export class MailDetails extends React.Component {
                 </div>
                 <div className="actions">
                     <Link to="/mail" ><img src="../../../assets/_PNG 64/back-button.png" /></Link>
-                    <Link to="/mail" onClick={() => {
-                        this.onDeleteMail()
-                    }}
-                    ><img src="../../../assets/_PNG 64/basic_trashcan.png" /></Link>
+                    <Link to={`/note/${mail.id}`}><img className="note-icon" src="../../../assets/_PNG 64/basic_sheet_txt .png" ></img></Link>
+                    <Link to="/mail" onClick={() => {this.onDeleteMail()}}><img src="../../../assets/_PNG 64/basic_trashcan.png" /></Link>
                 </div>
             </section>
         )

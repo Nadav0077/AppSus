@@ -1,0 +1,51 @@
+.mail-full h1 {
+    font-size: 3rem;
+    margin: 30px 0 0 20px;
+}
+
+.mail-full small {
+    color: rgb(177, 177, 177);
+}
+
+.mail-full img {
+    height: 40px;
+}
+
+.mail-full .upper {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.mail-full .content {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    align-items: center;
+}
+
+.mail-full .content img {
+    height: 100%;
+    max-width: 1000px;
+    object-fit: cover;
+}
+
+.mail-full .upper h6 {
+    font-size: 25px
+}
+
+.mail-full .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    .mail-full .content img {
+        max-width: 400px;
+        object-fit: cover;
+    }
+}

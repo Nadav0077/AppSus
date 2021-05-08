@@ -1,3 +1,98 @@
 .mail-preview {
-    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+}
+
+.unread {
+    font-family: quicksandbold;
+}
+
+.mail-reduced-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.mail-reduced-preview h1 {
+    margin-left: 30px;
+    font-size: larger;
+}
+
+.mail-reduced-preview .icon {
+    height: 25px;
+    width: auto;
+}
+
+.stared {
+    color: rgb(198, 198, 7);
+}
+
+.upper-preview {
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview-actions {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.mail-extended-preview h1 {
+    font-size: x-large;
+    margin-left: 30px;
+}
+
+.mail-extended-preview img {
+    height: 25px;
+    width: auto;
+}
+
+.mail-extended-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-preview .note-img {
+    height: 300px;
+}
+
+.content-preview {
+    display: flex;
+    justify-content: center;
+}
+
+.mail-extended-preview p {
+    text-align: center;
+}
+
+.mail-extended-preview h6 {
+    margin-left: 20px;
+    font-size: larger;
+    margin: 0 0 0 40px;
+}
+
+.mail-extended-preview small {
+    color: rgb(177, 177, 177);
+}
+
+.mail-reduced-preview h3 {
+    margin-left: 20px;
+}
+
+.mail-reduced-preview small {
+    margin-right: 20px;
+}
+
+.fullscreen-icon,
+.note-icon {
+    margin-left: 5px;
+    margin-top: 5px
+}
+
+@media screen and (max-width: 700px) {
+    .content-preview .note-img {
+        height: 200px;
+    }
 }
