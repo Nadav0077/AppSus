@@ -4,7 +4,7 @@ import { storageService } from './storage-service.js'
 const KEY = 'notesDB'
 
 export const keepService = {
-    getNotes,
+    query,
     addNote,
     saveNote,
     delNote,
@@ -20,8 +20,16 @@ function getNoteById(id) {
     return Promise.resolve(gNotes.find(note => note.id === id))
 }
 
-function getNotes() {
-    return Promise.resolve(gNotes);
+function query(filterBy, searchBy) {
+    console.log(filterBy, searchBy)
+    var notes = gNotes.slice();
+    if (filterBy && filterBy !== 'All') notes = notes.filter(note => note.type === filterBy)
+    if (searchBy) notes = notes.filter(note => {
+        if (note.type === 'NoteTodos') return note.info.todos.some(todo => todo.txt.includes(searchBy))
+        else if (note.type === 'NoteText') return note.info.txt.includes(searchBy)
+    })
+    console.log(notes)
+    return Promise.resolve(notes);
 }
 
 function createEmbededLink(link) {

@@ -88,7 +88,6 @@ export class KeepPreview extends React.Component {
             </div>
 
 
-        console.log(this.state.note.type)
         var placeHolderText = ''
         const { info } = this.state.note
         switch (this.state.note.type) {
@@ -129,7 +128,6 @@ export class KeepPreview extends React.Component {
                 break;
 
         }
-        console.log(inputVal)
         keepService.saveNote(note)
         this.setState({ note, isEdit: false })
 

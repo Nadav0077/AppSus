@@ -1,0 +1,21 @@
+.search-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 30px;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 350px;
+    padding: 10px;
+    border-color: rgba(255, 248, 220, 0.37);
+    border-radius: 5px;
+}
+
+.search-container select {
+    width: 200px;
+    padding: 10px;
+    border-color: rgba(255, 248, 220, 0.37);
+    border-radius: 5px;
+}

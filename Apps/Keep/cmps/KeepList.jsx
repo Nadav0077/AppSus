@@ -4,32 +4,28 @@ import { showUserMsg } from '../../../services/event-bus-service.js'
 
 export class KeepList extends React.Component {
     state = {
-        notes: []
+        notes: this.props.notes
     }
     componentDidMount() {
-        this.loadNotes()
+        // this.props.loadNotes()
+        // this.setState({ notes: this.props.notes })
     }
 
-    loadNotes() {
-        keepService.getNotes().then(notes => {
-            this.setState({ notes: notes })
-        })
-    }
 
     changePin = (note) => {
         note.isPinned = !note.isPinned
         keepService.saveNote(note)
-        this.loadNotes()
+        this.props.loadNotes()
     }
 
-    onDeleteNote=(note)=>{
+    onDeleteNote = (note) => {
         keepService.delNote(note)
-        this.loadNotes()
-        showUserMsg('Note Deleted!','error')
+        this.props.loadNotes()
+        showUserMsg('Note Deleted!', 'error')
     }
 
     render() {
-        const { notes } = this.state
+        const { notes } = this.props
         if (!notes) return 'Loading'
         return <div className="notes-container">
             <h1>Pinned Notes</h1>

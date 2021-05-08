@@ -35,22 +35,26 @@
 
 .video-btn {
     /* background-image: url(../../../../_SVG/basic_video.svg); */
-    background-image: url(../../../../_PNG\ 64/basic_video.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_video.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_video.svg);
 }
 
 .img-btn {
     /* background-image: url(../../../../_SVG/basic_picture_multiple.svg); */
-    background-image: url(../../../../_PNG\ 64/basic_picture_multiple.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_picture_multiple.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_picture_multiple.svg);
 }
 
 .todo-btn {
     /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
-    background-image: url(../../../../_PNG\ 64/basic_todo_txt.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_todo_txt.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_todo_txt.svg);
 }
 
 .audio-btn {
     /* background-image: url(../../../../_SVG/basic_todo_txt.svg); */
-    background-image: url(../../../../_PNG\ 64/basic_headset.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_headset.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_headset.svg);
 }
 
 @media screen and (max-width: 700px) {

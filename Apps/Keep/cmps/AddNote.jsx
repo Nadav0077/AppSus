@@ -27,17 +27,15 @@ export class AddNote extends React.Component {
             var aud = new Audio()
             aud.src = event.target.result
             func(aud.src)
-            console.log(aud.src)
         }
         reader.readAsDataURL(ev.target.files[0])
-        console.log(reader.result)
 
     }
 
     audioInput = () => {
         return <form onSubmit={(ev) => {
             ev.preventDefault();
-            this.onAddTextNote()
+            this.onAddNote()
         }}> <input accept="audio/*" onChange={this.loadAudioFromInput} type="file" /><button className="icon">+</button></form>
     }
 
@@ -46,15 +44,9 @@ export class AddNote extends React.Component {
         if (this.props.mailId) {
             if (this.state.inputVal === null) {
                 mailService.getMailById(this.props.mailId).then(mail=>{
-                    console.log(mail)
                     this.setState({ type: 'NoteText', inputVal: `${mail.subject}: ${mail.body}` },
-                    this.onAddTextNote)
+                    this.onAddNote)
                 })
-                // mailService.getMailById(this.props.mailId).then(mail =>
-                //     this.setState({ type: 'NoteText', inputVal: `${mail.subject}: ${mail.body}` }))
-                // this.setState({ type: 'NoteText', inputVal: `${subject}: ${body}` })
-                
-                // this.props.history.push('/note')
             }
         }
         var placeHolderText = ''
@@ -72,12 +64,11 @@ export class AddNote extends React.Component {
         }
         return <form onSubmit={(ev) => {
             ev.preventDefault();
-            this.onAddTextNote()
+            this.onAddNote()
         }}> <input placeholder={placeHolderText} type="text" onInput={this.handleChange} /><button className="icon">+</button></form>
     }
 
-    onAddTextNote = () => {
-        console.log(this.state.inputVal)
+    onAddNote = () => {
         if (!this.state.inputVal || !this.state.inputVal.length === 0) return
         var info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
 
@@ -97,9 +88,8 @@ export class AddNote extends React.Component {
                 break;
             // default:info = { txt: this.state.inputVal, style: { backgroundColor: '#C8B6FF' } }
         }
-        console.log(info)
         keepService.addNote(this.state.type, info).then(() => {
-            this.props.onRenderPage()
+            this.props.loadNotes()
             showUserMsg('Added Note!', 'success')
         })
     }

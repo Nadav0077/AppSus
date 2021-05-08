@@ -37,19 +37,23 @@
 }
 
 .edit-btn {
-    background-image: url(../../../../_PNG\ 64/basic_gear.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_gear.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_gear.svg);
 }
 
 .pin-btn {
-    background-image: url(../../../../_PNG\ 64/basic_pin2.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_pin2.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_pin2.svg);
 }
 
 .delete-note-btn {
-    background-image: url(../../../../_PNG\ 64/basic_trashcan_remove.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_trashcan_remove.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_trashcan_remove.svg);
 }
 
 .send-btn {
-    background-image: url(../../../../_PNG\ 64/basic_paperplane.png);
+    /* background-image: url(../../../../_PNG\ 64/basic_paperplane.png); */
+    background-image: url(https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_paperplane.svg);
 }
 
 @media screen and (max-width: 700px) {
