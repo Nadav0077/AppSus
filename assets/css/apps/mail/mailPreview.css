@@ -91,6 +91,10 @@
     margin-top: 5px
 }
 
+.reply-icon {
+    margin-right: 5px;
+}
+
 @media screen and (max-width: 700px) {
     .content-preview .note-img {
         height: 200px;

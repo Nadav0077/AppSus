@@ -1,7 +1,7 @@
-import { bookService } from '../services/book-service.js'
-import { eventBusService } from "../services/event-bus-service.js"
-import { BookList } from '../cmps/BookList.jsx'
-import { BookFilter } from '../cmps/BookFilter.jsx'
+import { bookService } from './services/book-service.js'
+import { eventBusService } from "./services/event-bus-service.js"
+import { BookList } from './cmps/BookList.jsx'
+import { BookFilter } from './cmps/BookFilter.jsx'
 import { BookDetails } from './BookDetails.jsx'
 
 export class Book extends React.Component {
@@ -12,7 +12,6 @@ export class Book extends React.Component {
     }
     componentDidMount() {
         this.loadBooks()
-
     }
 
 

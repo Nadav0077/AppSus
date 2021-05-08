@@ -1,7 +1,7 @@
 const { Route, Link, NavLink, Switch } = ReactRouterDOM
-import { LongTxt } from '../cmps/LongTxt.jsx'
-import { bookService } from '../services/book-service.js'
-import { AddReview } from '../cmps/AddReview.jsx'
+import { LongTxt } from './cmps/LongTxt.jsx'
+import { bookService } from './services/book-service.js'
+import { AddReview } from './cmps/AddReview.jsx'
 
 // export function BookDetails({ book, goBack, onDeleteBook }) {
 export class BookDetails extends React.Component {
@@ -105,7 +105,7 @@ export class BookDetails extends React.Component {
         else if (book.listPrice.amount < 20) priceColor = 'green-text'
         return (
             <div className="book-details">
-                <button className="back" onClick={() => this.props.history.push('/book')} ><img src="../assets/img/back.png" /></button>
+                <button className="back" onClick={() => this.props.history.push('/book')} ><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/back-button.png" /></button>
                 <img src={book.thumbnail} alt="" className="book-img" />
                 <div className="details-container">
                     <h1>{book.title}</h1>
@@ -116,7 +116,7 @@ export class BookDetails extends React.Component {
 
                     <LongTxt text={book.description} isLongTxtShown={this.state.isLongTxtShown} onChangeDesc={this.onChangeDesc} />
 
-                    <button className="delete-book" onClick={() => this.onDeleteBook(book.id)}><img src="../assets/img/garbage.png" /></button>
+                    <button className="delete-book" onClick={() => this.onDeleteBook(book.id)}><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_trashcan.svg" /></button>
 
                 </div>
                 <div className="book-review">

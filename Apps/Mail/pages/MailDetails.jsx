@@ -25,7 +25,6 @@ export class MailDetails extends React.Component {
     render() {
         const { mail } = this.state;
         if (!mail) return <h1>Loading...</h1>
-        console.log(this.props.params)
         return (
 
             <section className="mail-full">

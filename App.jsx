@@ -7,6 +7,11 @@ import { AppHeader } from './cmps/AppHeader.jsx'
 import { MailDetails } from './Apps/Mail/pages/MailDetails.jsx'
 import { MailCompose } from './Apps/Mail/pages/MailCompose.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
+import { Book } from './Apps/Book/Book.jsx'
+// import { BookList } from './Apps/Book/cmps/BookList.jsx'
+// import { BookFilter } from './Apps/Book/cmps/BookFilter.jsx'
+import { BookDetails } from './Apps/Book/BookDetails.jsx'
+
 
 
 export class App extends React.Component {
@@ -21,7 +26,9 @@ export class App extends React.Component {
                         <Route component={MailDetails} path="/mail/details/:mailId" />
                         <Route component={MailCompose} path="/mail/compose/:mailId" />
                         <Route component={MailCompose} path="/mail/compose" />
+                        <Route component={BookDetails} path="/book/:bookId" />
                         <Route component={MailApp} path="/mail/:noteId?" />
+                        <Route component={Book} path="/book" />
                         <Route component={MailApp} path="/mail" />
                         <Route component={KeepApp} path="/note/:mailId?" />
                         <Route component={Home} path="/" />

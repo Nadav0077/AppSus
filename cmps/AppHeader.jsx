@@ -7,6 +7,7 @@ function _AppHeader(props) {
       <li><NavLink exact to="/" >Home</NavLink></li>
       <li><NavLink to="/mail">Mail</NavLink></li>
       <li><NavLink to="/note">Notes</NavLink></li>
+      <li><NavLink to="/book">Books</NavLink></li>
     </ul>
   </nav>)
 

@@ -1,0 +1,272 @@
+.filter-search-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.del-review {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-preview {
+    background-color: rgba(245, 245, 245, 0.671);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+    width: 340px;
+    height: 590px;
+}
+
+.book-list a {
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+}
+
+.book-preview img,
+.book-details .book-img {
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 300px;
+    height: 400px;
+}
+
+.review-list {
+    word-wrap: break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 400px;
+    height: 400px;
+    padding: 3px;
+}
+
+.author {
+    color: rgb(107, 106, 106);
+}
+
+.book-preview:hover {
+    background-color: rgba(245, 245, 245, 0.836);
+}
+
+.book-filter {
+    background-color: rgba(245, 245, 245, 0.753);
+    border-radius: 5px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 25px 50px 25px;
+    padding: 10px;
+    flex: 2;
+}
+
+input,
+.book-filter button {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border-color: rgba(228, 227, 227, 0.379);
+}
+
+.book-filter button {
+    font-size: 15px;
+}
+
+input {
+    width: 50%;
+}
+
+.title-filter-container,
+.price-filter-container {
+    display: flex;
+}
+
+.book-filter button {
+    background-color: rgba(228, 65, 65, 0.856);
+    transition: 0.4s;
+    width: 80%;
+    flex: 3;
+}
+
+.book-filter button:hover {
+    background-color: rgba(228, 65, 65, 0.753);
+    cursor: pointer;
+}
+
+.search-container {
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-details img {
+    max-width: 100%;
+}
+
+.book-review {
+    min-width: 400px;
+    min-height: 400px;
+    box-shadow: inset 7px 5px 8px -10px rgba(0, 0, 0, 0.26);
+}
+
+.book-review nav {
+    padding: 10px;
+}
+
+.book-review nav a {
+    margin-right: 5px;
+    background-color: rgba(59, 58, 58, 0.568);
+    padding: 10px;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.book-review nav a:hover {
+    background-color: rgba(122, 121, 121, 0.568);
+}
+
+.book-review nav .active {
+    font-weight: bold;
+    background-color: rgba(39, 180, 34, 0.658);
+}
+
+.book-review nav .active:hover {
+    background-color: rgb(29, 156, 24);
+}
+
+.book-details {
+    justify-self: center;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(245, 245, 245, 0.678);
+    gap: 15px;
+    margin: 50px;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    display: flex;
+    flex-direction: column;
+}
+
+.back,
+.delete-book {
+    align-self: flex-start;
+    background-color: transparent;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 100px;
+    padding: 0px;
+    border-width: 0px;
+}
+
+.sale {
+    background-color: rgba(7, 184, 51, 0.74);
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    color: whitesmoke;
+}
+
+.delete-book {
+    align-self: center;
+    margin-left: auto;
+}
+
+.red-text {
+    color: rgb(202, 5, 5);
+}
+
+.green-text {
+    color: rgb(3, 187, 3);
+}
+
+.details-desc {
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.add-review-container {
+    padding: 10px;
+}
+
+.add-review-container input[type=textarea] {
+    resize: none;
+    height: 90px;
+}
+
+.review-list {
+    width: 100%;
+}
+
+.search-list {
+    width: 45%;
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+    top: 40%;
+    border-radius: 5px;
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.search-res:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.search-res {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(38, 71, 104, 0.308);
+}
+
+.add-book-btn:hover {
+    cursor: pointer;
+}
+
+.txt-review-container {}
+
+@media screen and (min-width: 520px) {
+    .book-filter,
+    .book-filter {
+        flex-direction: row;
+    }
+    .book-filter button {
+        flex: 1;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .search-container {
+        width: 80%;
+    }
+    .book-details {
+        flex-direction: row;
+        /* height: 600px; */
+    }
+    .details-container {
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+}
