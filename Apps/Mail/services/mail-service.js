@@ -18,7 +18,7 @@ export const mailService = {
 }
 var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorage(KEY) : [{
         id: utilService.makeId(),
-        user: 'some-user',
+        user: 'Roi',
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
@@ -29,7 +29,7 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
     {
         id: utilService.makeId(),
-        user: 'some-user',
+        user: 'Teacher',
         subject: 'homeWork',
         body: 'Do all exercises from page 100 to 103! goodluck :)',
         isRead: true,
@@ -40,7 +40,7 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
     {
         id: utilService.makeId(),
-        user: 'some-user',
+        user: 'Co-Academy',
         subject: 'marketing',
         body: 'join coding academy now! and do magic!',
         isRead: true,
@@ -51,9 +51,9 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
     {
         id: utilService.makeId(),
-        user: 'some-user',
-        subject: 'Wassap?',
-        body: 'Pick up!',
+        user: 'Med-Center',
+        subject: 'medicine',
+        body: 'your hemorrhoids medicine is waiting for you!',
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
@@ -62,9 +62,9 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
     {
         id: utilService.makeId(),
-        user: 'some-user',
-        subject: 'Wassap?',
-        body: 'Pick up!',
+        user: 'Tinder',
+        subject: 'Lonely? Try',
+        body: 'Join tinder now! who knows maybe you will meet the love of your life(for one night)',
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
@@ -73,9 +73,9 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
     {
         id: utilService.makeId(),
-        user: 'some-user',
-        subject: 'Wassap?',
-        body: 'Pick up!',
+        user: 'Buissness',
+        subject: 'Pleasure',
+        body: 'Lets get down,Lets get down to buissness ',
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
@@ -84,9 +84,9 @@ var gMails = storageService.loadFromStorage(KEY) ? storageService.loadFromStorag
     },
     {
         id: utilService.makeId(),
-        user: 'some-user',
-        subject: 'Wassap?',
-        body: 'Pick up!',
+        user: 'Telegrass',
+        subject: 'Bamba?',
+        body: `Join us and experience bamba the way you should. `,
         isRead: false,
         sentAt: 1551133930594,
         isOpen: false,
