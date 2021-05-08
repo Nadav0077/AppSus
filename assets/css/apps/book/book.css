@@ -221,7 +221,6 @@
 .search-list {
     width: 45%;
     background-color: rgb(245, 245, 245);
-    position: absolute;
     top: 40%;
     border-radius: 5px;
     list-style: none;
@@ -242,8 +241,6 @@
 .add-book-btn:hover {
     cursor: pointer;
 }
-
-.txt-review-container {}
 
 @media screen and (min-width: 520px) {
     .book-filter,

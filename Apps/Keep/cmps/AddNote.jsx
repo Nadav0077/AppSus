@@ -65,7 +65,7 @@ export class AddNote extends React.Component {
         return <form onSubmit={(ev) => {
             ev.preventDefault();
             this.onAddNote()
-        }}> <input placeholder={placeHolderText} type="text" onInput={this.handleChange} /><button className="icon">+</button></form>
+        }}> <input placeholder={placeHolderText} type="text" onChange={this.handleChange} /><button className="icon">+</button></form>
     }
 
     onAddNote = () => {
