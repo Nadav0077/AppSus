@@ -61,7 +61,7 @@ export function MailPreview({ mail, loadMails }) {
             <Link to={`/note/${mail.id}`}><img className="note-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_sheet_txt .svg" ></img></Link>
             <img className="icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_trashcan.svg" onClick={() => { onDeleteMail() }}></img>
             <Link to={`/mail/details/${mail.id}`}><img className="fullscreen-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/fullscreen.png" /></Link>
-            <Link to={`/mail/compose/${mail.id}`}><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/back-reply-svgrepo-com.svg" /></Link>
+            <Link to={`/mail/compose/${mail.id}`}><img className="reply-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/back-reply-svgrepo-com.svg" /></Link>
           </div>
         </div>
         <h6>{mail.user} <small>{mail.user}@gmail.com</small></h6>
