@@ -50,7 +50,7 @@ export class MailDetails extends React.Component {
                 <div className="actions">
                     <Link to="/mail" ><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/back-button.png" /></Link>
                     <Link to={`/note/${mail.id}`}><img className="note-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/basic_sheet_txt .svg" ></img></Link>
-                    <Link to={`/mail/compose/${mail.id}`}><img className="reply-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_SVG/back-reply-svgrepo-com.svg" /></Link>
+                    <Link to={`/mail/compose/${mail.id}`}><img className="reply-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/9a35bf2add52a4088fe0eb535d75ee6715864ce2/assets/_SVG/back-reply-svgrepo-com.svg" /></Link>
                     <Link to="/mail" onClick={() => {this.onDeleteMail()}}><img src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/basic_trashcan.png" /></Link>
                 </div>
             </section>

@@ -32,7 +32,7 @@ export class MailSideBar extends React.Component {
                     </ul>
                 </nav>
                 <div className="compose-ball">
-                    <Link to="/mail/compose"><img className="compose-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/8a72a79202b41cf765811a21fe5a4a28ce1d4577/assets/_PNG 64/pencil.png"/></Link>
+                    <Link to="/mail/compose"><img className="compose-icon" src="https://raw.githubusercontent.com/Nadav0077/AppSus/main/assets/_PNG%2064/pencil.png"/></Link>
                 </div>
             </section>
         )
